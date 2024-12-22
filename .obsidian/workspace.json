@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "6S081/Lecture/Lec01：Introduction and Examples (Robert).md",
+                "file": "6S081/Lecture/Lec03：OS Organization and System Calls (Frans).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Lec01：Introduction and Examples (Robert)"
+              "title": "Lec03：OS Organization and System Calls (Frans)"
             }
           }
         ]
@@ -122,10 +122,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "6S081/Lecture/Lec01：Introduction and Examples (Robert).md"
+                "file": "6S081/Lecture/Lec03：OS Organization and System Calls (Frans).md"
               },
               "icon": "lucide-list",
-              "title": "Lec01：Introduction and Examples (Robert) 的大纲"
+              "title": "Lec03：OS Organization and System Calls (Frans) 的大纲"
             }
           },
           {
@@ -144,7 +144,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/6S081/Lecture/Lec04：Page tables (Frans).md",
+                "file": "6S081/Lecture/Lec03：OS Organization and System Calls (Frans).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -154,7 +154,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Lec04：Page tables (Frans) 的反向链接列表"
+              "title": "Lec03：OS Organization and System Calls (Frans) 的反向链接列表"
             }
           },
           {
@@ -163,12 +163,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/6S081/Lecture/Lec04：Page tables (Frans).md",
+                "file": "6S081/Lecture/Lec03：OS Organization and System Calls (Frans).md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Lec04：Page tables (Frans) 的出链列表"
+              "title": "Lec03：OS Organization and System Calls (Frans) 的出链列表"
             }
           },
           {
@@ -178,7 +178,7 @@
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": true
+                "useHierarchy": false
               },
               "icon": "lucide-tags",
               "title": "标签"
@@ -190,18 +190,8 @@
             "state": {
               "type": "side-panel-control-view",
               "state": {},
-              "icon": "lucide-file",
-              "title": "插件不再活动"
-            }
-          },
-          {
-            "id": "abcbc12d87a11b5e",
-            "type": "leaf",
-            "state": {
-              "type": "planner-timeline",
-              "state": {},
-              "icon": "calendar-with-checkmark",
-              "title": "Timeline"
+              "icon": "viewIcon",
+              "title": "Markdown-Autocomplete"
             }
           }
         ],
@@ -246,6 +236,7 @@
   },
   "active": "93915358dd6ed6f9",
   "lastOpenFiles": [
+    "6S081/Lecture/Lec01：Introduction and Examples (Robert).md",
     "6S081/Lab/Lab：Unix utilities.md",
     "6S081/Lab/Lab：traps.md",
     "6S081/Lab/Lab：System calls.md",
@@ -271,7 +262,6 @@
     "docs/6S081/Lecture/Lec08：Page faults (Frans).md",
     "docs/6S081/Lab/Lab：Unix utilities.md",
     "docs/6S081/Lab/Lab：traps.md",
-    "docs/6S081/Lab/Lab：System calls.md",
     "docs/模板",
     "docs/日记",
     "site/assets/javascripts/glightbox.min.js",
