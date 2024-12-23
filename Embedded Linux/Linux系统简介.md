@@ -6,7 +6,7 @@ author: days
 category: Embedded Linux
 published: 2024-12-23
 draft: true
-description: 主要讲解Linux系统的的历史及一些基本概念。
+description: 主要讲解Linux系统的历史及一些基本概念。
 ---
 ## Linux 发展史
 Linux的发展史，还得从UNIX说起。
@@ -19,10 +19,10 @@ Linux的发展史，还得从UNIX说起。
 6. 1993年，AT&T把UNIX转卖给Novell公司。随后，Novell发行了基于System V Release 4的自己的UNIX版本UNIXWare，SUN公司发行了Solaris。两个相互竞争的UNIX使用的图形用户界面已经合并为一个新的工作平台标准，叫做通用平台环境（CDE）。
 
 7. 1991年10月5日，**Linus Benedict Torvalds宣布开发了类似UNIX的小操作系统，称为Linux，受到Minix启发**。
-## Linux系统简介[](https://doc.embedfire.com/linux/imx6/base/zh/latest/linux_basis/linux_brief.html#id1 "永久链接至标题")
+## Linux系统简介
 Linux系统由Linus Torvalds （林纳斯·托瓦兹）于1991年发布在新闻组的内核发展而来，由于它在发布之初就免费和自由传播，支持多用户、多任务及多线程，且兼容POSIX标准，使得它支持运行当时主流系统Unix的一些工具软件，吸引了众多的使用者和开发者，逐渐发展壮大至今。
 关于Linux系统的发展历史，建议阅读其作者Linus本人的自传《Just For Fun》一书。
-## **Linux内核与发行版**
+## Linux内核与发行版
 **==我们说Linux系统时，其含义往往是指采用Linux内核的操作系统。Linux内核负责控制硬件、管理文件系统、进程管理、网络通讯等，但它本身并没有给用户提供必要的工具和应用软件。==**
 由于Linux内核本身是开源的，所以一些人和厂商在其规则之下，基于Linux内核搭配各种各样系统管理软件或应用工具软件，从而组成一套完整可用的操作系统，见下图。我们称这样的系统为**Linux发行版**（distribution）。完整的Linwux系统就如同汽车，Linux内核构成了最为关键的引擎，不同的发行版就类似使用相同引擎的不同车型。
 ![image.png|310](https://raw.githubusercontent.com/ScuDays/MyImg/master/202412231649504.png)
