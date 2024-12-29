@@ -29,6 +29,14 @@
     {
       "folder": "常用命令",
       "template": "_模板/常用命令.md"
+    },
+    {
+      "folder": "Tools",
+      "template": "_模板/Tools.md"
+    },
+    {
+      "folder": "computer basic",
+      "template": "_模板/note-computer-basic.md"
     }
   ],
   "enable_file_templates": false,
