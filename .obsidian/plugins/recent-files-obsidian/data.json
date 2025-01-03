@@ -1,6 +1,18 @@
 {
   "recentFiles": [
     {
+      "basename": "Makefile",
+      "path": "Embedded Linux/Makefile.md"
+    },
+    {
+      "basename": "Shell脚本编程",
+      "path": "Embedded Linux/Shell脚本编程.md"
+    },
+    {
+      "basename": "疑问",
+      "path": "Embedded Linux/疑问.md"
+    },
+    {
       "basename": "链接",
       "path": "computer basic/链接.md"
     },
@@ -17,10 +29,6 @@
       "path": "Embedded Linux/交叉编译.md"
     },
     {
-      "basename": "疑问",
-      "path": "Embedded Linux/疑问.md"
-    },
-    {
       "basename": "Linux环境变量",
       "path": "Embedded Linux/Linux环境变量.md"
     },
@@ -35,14 +43,6 @@
     {
       "basename": "Linux系统简介",
       "path": "Embedded Linux/Linux系统简介.md"
-    },
-    {
-      "basename": "Makefile",
-      "path": "Embedded Linux/Makefile.md"
-    },
-    {
-      "basename": "Shell脚本编程",
-      "path": "Embedded Linux/Shell脚本编程.md"
     },
     {
       "basename": "Lec06：Isolation & system call entry!exit (Robert)",
