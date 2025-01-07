@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "学习路线",
+      "path": "_杂念/学习路线.md"
+    },
+    {
       "basename": "Makefile",
       "path": "Embedded Linux/Makefile.md"
     },
@@ -71,10 +75,6 @@
     {
       "basename": "Lab：Copy-on-Write Fork for xv6",
       "path": "6S081/Lab/Lab：Copy-on-Write Fork for xv6.md"
-    },
-    {
-      "basename": "学习路线",
-      "path": "_杂念/学习路线.md"
     },
     {
       "basename": "杂念",
