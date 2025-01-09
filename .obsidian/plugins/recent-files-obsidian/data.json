@@ -1,20 +1,24 @@
 {
   "recentFiles": [
     {
-      "basename": "学习路线",
-      "path": "_杂念/学习路线.md"
+      "basename": "Uboot",
+      "path": "Embedded Linux/Uboot.md"
+    },
+    {
+      "basename": "疑问",
+      "path": "Embedded Linux/疑问.md"
     },
     {
       "basename": "Makefile",
       "path": "Embedded Linux/Makefile.md"
     },
     {
-      "basename": "Shell脚本编程",
-      "path": "Embedded Linux/Shell脚本编程.md"
+      "basename": "学习路线",
+      "path": "_杂念/学习路线.md"
     },
     {
-      "basename": "疑问",
-      "path": "Embedded Linux/疑问.md"
+      "basename": "Shell脚本编程",
+      "path": "Embedded Linux/Shell脚本编程.md"
     },
     {
       "basename": "链接",
