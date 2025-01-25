@@ -1,12 +1,24 @@
 {
   "recentFiles": [
     {
-      "basename": "需要整理",
-      "path": "Embedded Linux/需要整理.md"
+      "basename": "构建deb软件安装包",
+      "path": "Embedded Linux/构建deb软件安装包.md"
+    },
+    {
+      "basename": "Linux环境变量",
+      "path": "Embedded Linux/Linux环境变量.md"
+    },
+    {
+      "basename": "Linux嵌入式环境配置",
+      "path": "Embedded Linux/Linux嵌入式环境配置.md"
     },
     {
       "basename": "学习过程",
       "path": "Embedded Linux/学习过程.md"
+    },
+    {
+      "basename": "需要整理",
+      "path": "Embedded Linux/需要整理.md"
     },
     {
       "basename": "Makefile",
@@ -49,10 +61,6 @@
       "path": "_杂念/知识漏洞.md"
     },
     {
-      "basename": "Linux环境变量",
-      "path": "Embedded Linux/Linux环境变量.md"
-    },
-    {
       "basename": "Linux通配符",
       "path": "Embedded Linux/Linux通配符.md"
     },
@@ -67,10 +75,6 @@
     {
       "basename": "Shell脚本编程",
       "path": "Embedded Linux/Shell脚本编程.md"
-    },
-    {
-      "basename": "构建deb软件安装包",
-      "path": "Embedded Linux/构建deb软件安装包.md"
     },
     {
       "basename": "C 文件的编译过程",
@@ -195,10 +199,6 @@
     {
       "basename": "Lab：page tables",
       "path": "docs/6S081/Lab/Lab：page tables.md"
-    },
-    {
-      "basename": "note-6S081",
-      "path": "docs/模板/note-6S081.md"
     }
   ],
   "omittedPaths": [],
