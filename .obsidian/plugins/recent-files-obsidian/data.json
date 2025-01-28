@@ -1,6 +1,18 @@
 {
   "recentFiles": [
     {
+      "basename": "学习路线",
+      "path": "_杂念/学习路线.md"
+    },
+    {
+      "basename": "平台设备驱动框架",
+      "path": "Embedded Linux/平台设备驱动框架.md"
+    },
+    {
+      "basename": "链接",
+      "path": "computer basic/链接.md"
+    },
+    {
       "basename": "Linux嵌入式环境配置（全面避坑）",
       "path": "Embedded Linux/Linux嵌入式环境配置（全面避坑）.md"
     },
@@ -83,14 +95,6 @@
     {
       "basename": "交叉编译",
       "path": "Embedded Linux/交叉编译.md"
-    },
-    {
-      "basename": "链接",
-      "path": "computer basic/链接.md"
-    },
-    {
-      "basename": "学习路线",
-      "path": "_杂念/学习路线.md"
     },
     {
       "basename": "Lec06：Isolation & system call entry!exit (Robert)",
@@ -195,10 +199,6 @@
     {
       "basename": "日记",
       "path": "_模板/日记.md"
-    },
-    {
-      "basename": "Lab：page tables",
-      "path": "docs/6S081/Lab/Lab：page tables.md"
     }
   ],
   "omittedPaths": [],
