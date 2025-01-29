@@ -1,10 +1,6 @@
 {
   "recentFiles": [
     {
-      "basename": "学习路线",
-      "path": "_杂念/学习路线.md"
-    },
-    {
       "basename": "平台设备驱动框架",
       "path": "Embedded Linux/平台设备驱动框架.md"
     },
@@ -13,8 +9,16 @@
       "path": "computer basic/链接.md"
     },
     {
+      "basename": "C 文件的编译过程",
+      "path": "computer basic/C 文件的编译过程.md"
+    },
+    {
       "basename": "Linux嵌入式环境配置（全面避坑）",
       "path": "Embedded Linux/Linux嵌入式环境配置（全面避坑）.md"
+    },
+    {
+      "basename": "学习路线",
+      "path": "_杂念/学习路线.md"
     },
     {
       "basename": "构建deb软件安装包",
@@ -87,10 +91,6 @@
     {
       "basename": "Shell脚本编程",
       "path": "Embedded Linux/Shell脚本编程.md"
-    },
-    {
-      "basename": "C 文件的编译过程",
-      "path": "computer basic/C 文件的编译过程.md"
     },
     {
       "basename": "交叉编译",

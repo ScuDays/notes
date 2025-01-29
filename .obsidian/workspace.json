@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_杂念/学习路线.md",
+                "file": "Embedded Linux/平台设备驱动框架.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "学习路线"
+              "title": "平台设备驱动框架"
             }
           }
         ]
@@ -250,7 +250,9 @@
   "lastOpenFiles": [
     "Embedded Linux/平台设备驱动框架.md",
     "computer basic/链接.md",
+    "computer basic/C 文件的编译过程.md",
     "Embedded Linux/Linux嵌入式环境配置（全面避坑）.md",
+    "_杂念/学习路线.md",
     "Embedded Linux/构建deb软件安装包.md",
     "Embedded Linux/Linux环境变量.md",
     "Embedded Linux/学习过程.md",
@@ -270,7 +272,6 @@
     "Embedded Linux/Linux文件目录.md",
     "Embedded Linux/Linux系统简介.md",
     "Embedded Linux/Shell脚本编程.md",
-    "computer basic/C 文件的编译过程.md",
     "Clippings/imx6ull uboot启动流程.md",
     "Embedded Linux/交叉编译.md",
     " 1/867145-20221207212806224-17146666.png",
@@ -286,7 +287,6 @@
     " 1",
     "/ 1",
     "Clippings/未命名.md",
-    "undefined.md",
     " 2",
     "/ 2",
     "Clippings",
