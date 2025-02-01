@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Embedded Linux/Linux嵌入式环境配置（全面避坑）.md",
+                "file": "Embedded Linux/Linux的设备模型.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Linux嵌入式环境配置（全面避坑）"
+              "title": "Linux的设备模型"
             }
           }
         ]
@@ -54,7 +54,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "deb",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -75,7 +75,8 @@
               "title": "书签"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       },
       {
         "id": "0e38d9a2cdce5106",
@@ -96,7 +97,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "bfc5138eefd19587",
@@ -106,6 +108,21 @@
         "id": "936d023ca1951574",
         "type": "tabs",
         "children": [
+          {
+            "id": "a8f31c4c438ee9b2",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Embedded Linux/Linux的设备模型.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Linux的设备模型 的大纲"
+            }
+          },
           {
             "id": "b51bce920599be50",
             "type": "leaf",
@@ -132,7 +149,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Embedded Linux/Linux嵌入式环境配置（全面避坑）.md",
+                "file": "Embedded Linux/Linux的设备模型.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -142,7 +159,7 @@
                 "unlinkedCollapsed": false
               },
               "icon": "links-coming-in",
-              "title": "Linux嵌入式环境配置（全面避坑） 的反向链接列表"
+              "title": "Linux的设备模型 的反向链接列表"
             }
           },
           {
@@ -197,18 +214,6 @@
             }
           },
           {
-            "id": "a8f31c4c438ee9b2",
-            "type": "leaf",
-            "state": {
-              "type": "outline",
-              "state": {
-                "file": "Embedded Linux/Linux嵌入式环境配置（全面避坑）.md"
-              },
-              "icon": "lucide-list",
-              "title": "Linux嵌入式环境配置（全面避坑） 的大纲"
-            }
-          },
-          {
             "id": "b01e949d6fc89a49",
             "type": "leaf",
             "state": {
@@ -241,7 +246,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 316.5
+    "width": 315.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -259,8 +264,9 @@
       "obsidian-tag-suggest:为当前文档推荐标签": false
     }
   },
-  "active": "93915358dd6ed6f9",
+  "active": "24fe8a4ec8c6e7b7",
   "lastOpenFiles": [
+    "Embedded Linux/Linux嵌入式环境配置（全面避坑）.md",
     "Embedded Linux/Linux环境变量.md",
     "Embedded Linux/Linux的设备模型.md",
     "Embedded Linux/平台设备驱动框架.md",
@@ -272,7 +278,6 @@
     "Embedded Linux/Linux系统简介.md",
     "Embedded Linux/Linux文件目录.md",
     "Embedded Linux/Linux通配符.md",
-    "Embedded Linux/Linux嵌入式环境配置（全面避坑）.md",
     "Embedded Linux/构建deb软件安装包.md",
     "Embedded Linux/交叉编译.md",
     "Embedded Linux/学习过程.md",
