@@ -6,7 +6,7 @@ author: days
 category: Embedded Linux
 published: 2025-02-03
 draft: false
-description:
+description: 第一个Linux驱动
 ---
 
 参考
