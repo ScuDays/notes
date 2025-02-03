@@ -41,6 +41,7 @@ description: 使用网络挂载内核镜像、设备树、根文件系统
 ![59.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/59.png)
 
 ![60.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/60.png)
+
 ## 网络挂载
 
 ![61.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/61.png)
