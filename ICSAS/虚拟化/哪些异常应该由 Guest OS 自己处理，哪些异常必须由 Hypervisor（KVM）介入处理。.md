@@ -68,3 +68,5 @@ draft: false
 | 访问物理系统寄存器 | 否 | 是 (必须) | 资源控制：防止 Guest 直接控制物理硬件（如中断控制器、时钟）。 |
 
 所以，KVM 是一个“聪明的管理者”，它只在必要的时候（威胁到安全、需要提供虚拟服务时）才会介入，其他时候则完全放手让 Guest OS 在自己的沙箱里自由运行。
+
+![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/20251001152115.png)

@@ -49,7 +49,7 @@ published: 2024-10-09
 + **第二个信息，引起 page fault 的原因类型，对不同场景的page fault有不同的响应。**
     - 不同的场景是指，比如因为load指令触发的page fault、因为store指令触发的page fault又或者是因为jump指令触发的page fault。所以实际上如果你查看RISC-V的文档，在**SCAUSE**（注，Supervisor cause寄存器，保存了trap机制中进入到supervisor mode的原因）寄存器的介绍中，有多个与page fault相关的原因。比如，**13表示是因为load引起的page fault；15表示是因为store引起的page fault；12表示是因为指令执行引起的page fault**。所以第二个信息**存在**`**SCAUSE**`**寄存器**中，**其中总共有3个类型的原因与page fault相关，分别是读、写和指令。**ECALL进入到supervisor mode对应的是8，这是我们在上节课中应该看到的SCAUSE值。基本上来说，page fault和其他的异常使用与系统调用相同的trap机制（注，详见lec06）来从用户空间切换到内核空间。如果是因为page fault触发的trap机制并且进入到内核空间，STVAL寄存器和SCAUSE寄存器都会有相应的值。
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/592e2ce2f893c6c90cc79b753205cf6f.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/592e2ce2f893c6c90cc79b753205cf6f.jpeg)
 
 + **第三个信息，引起page fault时的程序计数器值，这表明了page fault在用户空间发生的位置**
     - 从上节课可以知道，作为trap处理代码的一部分，这个地址存放在SEPC（Supervisor Exception Program Counter）寄存器中，并同时会保存在trapframe->epc（注，详见lec06）中。
@@ -68,7 +68,7 @@ published: 2024-10-09
 
 **<font style="color:rgb(27, 27, 27);">当一个应用程序启动的时候，sbrk指向的是heap的最底端，同时也是stack的最顶端。这个位置通过代表进程的数据结构中的sz字段表示，这里以</font>**_**<font style="color:rgb(27, 27, 27);">p->sz表示</font>**_**<font style="color:rgb(27, 27, 27);">。</font>**
 
-![|750](https://raw.githubusercontent.com/ScuDays/MyImg/master/3e01715e78e1e1b56450d74ba17e8307.jpeg)
+![|750](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/3e01715e78e1e1b56450d74ba17e8307.jpeg)
 
 **<font style="color:rgb(27, 27, 27);">当调用sbrk时，参数为整数，代表了你想要申请的page数量（注，原视频说的是page，但是根据Linux </font>**[**man page**](https://man7.org/linux/man-pages/man2/sbrk.2.html)**<font style="color:rgb(27, 27, 27);">，实际中sbrk的参数是字节数）。sbrk会扩展heap的上边界（也就是会扩大heap）。</font>**
 
@@ -76,7 +76,7 @@ published: 2024-10-09
 
 **<font style="color:rgb(27, 27, 27);">注意：heap(堆)向上增长，stack(栈)向下增长</font>**
 
-![用户进程的虚拟地址空间分布|768](https://raw.githubusercontent.com/ScuDays/MyImg/master/8ca948ec7153f4431e576e700439d4a2.jpeg)
+![用户进程的虚拟地址空间分布|768](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/8ca948ec7153f4431e576e700439d4a2.jpeg)
 
 + **<font style="color:rgb(27, 27, 27);">这意味着，当sbrk实际发生或者被调用的时候，内核会分配一些物理内存，并将这些内存映射到用户应用程序的地址空间，然后将内存内容初始化为0，再返回sbrk系统调用。</font>**
 + **<font style="color:rgb(27, 27, 27);">这样，应用程序可以通过多次sbrk系统调用来增加它所需要的内存。应用程序爷可以通过给sbrk传入负数作为参数，来减少它的地址空间。</font>**<font style="color:rgb(27, 27, 27);">不过在这节课我们只关注增加内存的场景。</font>
@@ -138,7 +138,7 @@ published: 2024-10-09
 
 + **<font style="color:rgb(27, 27, 27);">有如此多的内容全是0的page，在物理内存中，只需要分配一个page，这个page的内容全是0。然后将所有虚拟地址空间的全0的page都map到这一个物理page上。这样至少在程序启动的时候能节省大量的物理内存分配。</font>**
 
-![|908](https://raw.githubusercontent.com/ScuDays/MyImg/master/1d6f1d4df93a23789a0aaebd6a15f659.jpeg)
+![|908](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/1d6f1d4df93a23789a0aaebd6a15f659.jpeg)
 
 ---
 
@@ -152,7 +152,7 @@ published: 2024-10-09
 
 + **<font style="color:rgb(27, 27, 27);">是的，完全正确。假设store指令发生在BSS最顶端的page中。我们想要做的是，在物理内存中申请一个新的内存 page ，将其内容设置为0，因为我们预期这个内存的内容为0。之后我们需要更新这个 page 的 mapping 关系，首先 PTE 要设置成可读可写，然后将其指向新的物理 page 。这里相当于更新了 PTE ，之后我们可以重新执行指令。</font>**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/161da5099058af97d6eca06092653f61.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/161da5099058af97d6eca06092653f61.jpeg)
 
 ---
 
@@ -183,7 +183,7 @@ published: 2024-10-09
 3. **<font style="color:rgb(27, 27, 27);">Shell 的子进程执行的第一件事情就是调用 exec 运行一些其他程序，比如运行 echo。</font>**
 4. **<font style="color:rgb(27, 27, 27);">现在的情况是，fork创建了Shell地址空间的一个完整的拷贝，而 exec 第一件事情就是释放地址空间，又重新申请了一个包含了echo的地址空间。这看起来有点浪费。</font>**
 
-![|475](https://raw.githubusercontent.com/ScuDays/MyImg/master/e78183da5f77b2be278a9515b508a312.jpeg)	
+![|475](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/e78183da5f77b2be278a9515b508a312.jpeg)	
 
 ---
 
@@ -193,7 +193,7 @@ published: 2024-10-09
 
 **在物理内存中，XV6中的Shell通常会有4个page，当调用fork时，基本上就是创建了4个新的page，并将父进程page的内容拷贝到4个新的子进程的page中。**
 
-![|615](https://raw.githubusercontent.com/ScuDays/MyImg/master/261db463e93238ad32b83995334d0aa4.jpeg)
+![|615](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/261db463e93238ad32b83995334d0aa4.jpeg)
 
 ---
 
@@ -209,7 +209,7 @@ published: 2024-10-09
 
 <font style="color:rgb(27, 27, 27);">因为一旦子进程想要修改这些内存的内容，相应的更新应该对父进程不可见，因为我们希望在父进程和子进程之间有强隔离性，所以这里我们需要更加小心一些。为了确保进程间的隔离性，我们可以将这里的父进程和子进程的PTE的标志位都设置成只读的。</font>
 
-![550](https://raw.githubusercontent.com/ScuDays/MyImg/master/8e5cfddcd1ec09a1af09fc2a8e064ce0.jpeg)
+![550](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/8e5cfddcd1ec09a1af09fc2a8e064ce0.jpeg)
 
 ---
 
@@ -229,11 +229,11 @@ published: 2024-10-09
 
 **<font style="color:rgb(27, 27, 27);">实际上，对于触发刚刚page fault的物理page，因为现在只对父进程可见，相应的PTE对于父进程也变成可读写的了。</font>**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/d6e04cebf72dcae2f6608ee70bc28094.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/d6e04cebf72dcae2f6608ee70bc28094.jpeg)
 
 **<font style="color:rgb(27, 27, 27);">所以现在，我们拷贝了一个page，将新的page映射到相应的用户地址空间，并重新执行用户指令。重新执行用户指令是指调用userret函数（注，详见6.8），也即是lec06中介绍的返回到用户空间的方法。</font>**
 
-![|771](https://raw.githubusercontent.com/ScuDays/MyImg/master/6ca7905cacd62a5233850f12e6b31b79.jpeg)
+![|771](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/6ca7905cacd62a5233850f12e6b31b79.jpeg)
 
 ---
 
@@ -256,7 +256,7 @@ published: 2024-10-09
 >
 > **<font style="color:rgb(27, 27, 27);">Frans教授：</font>**<font style="color:rgb(27, 27, 27);">内核必须要能够识别这是一个copy-on-write场景。几乎所有的page table硬件都支持了这一点。我们之前并没有提到相关的内容，</font>**<font style="color:rgb(27, 27, 27);">下图是一个常见的多级page table。对于PTE的标志位，我之前介绍过第0bit到第7bit，但是没有介绍最后两位RSW。这两位保留给supervisor software使用，supervisor softeware指的就是内核。</font>**<font style="color:rgb(27, 27, 27);">内核可以随意使用这两个bit位。所以可以做的一件事情就是，将bit8标识为当前是一个copy-on-write page。</font>
 >
-> ![](https://raw.githubusercontent.com/ScuDays/MyImg/master/47640b4a1454d1e51fac97fab013f290.jpeg)
+> ![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/47640b4a1454d1e51fac97fab013f290.jpeg)
 >
 > **<font style="color:rgb(27, 27, 27);">当内核在管理这些page table时，对于copy-on-write相关的page，内核可以设置相应的bit位，这样当发生page fault时，我们可以发现如果copy-on-write bit位设置了，我们就可以执行相应的操作了。否则的话，比如说lazy allocation，我们就做一些其他的处理操作。</font>**
 >
@@ -294,9 +294,9 @@ published: 2024-10-09
 
 **<font style="color:rgb(27, 27, 27);">在 未修改的XV6中，exec() 中，操作系统会加载程序内存的text，data区域，并且以 eager (立即) 的方式将这些区域加载进page table。</font>**
 
-![|469](https://raw.githubusercontent.com/ScuDays/MyImg/master/bfdfd9052c57b843d5a944b95f537b27.jpeg)
+![|469](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/bfdfd9052c57b843d5a944b95f537b27.jpeg)
 
-![|272](https://raw.githubusercontent.com/ScuDays/MyImg/master/16ea26cc9113d3ea15b09f3e6baf88d8.png)
+![|272](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/16ea26cc9113d3ea15b09f3e6baf88d8.png)
 
 ---
 
@@ -314,7 +314,7 @@ published: 2024-10-09
 
 **<font style="color:rgb(27, 27, 27);">位于地址0的指令是会触发第一个page fault的指令，因为应用程序是从地址0开始运行并且 text 区域从地址0开始向上增长。</font>**
 
-![|556](https://raw.githubusercontent.com/ScuDays/MyImg/master/f8d030f28ede735d1f355f8c437e2c1e.jpeg)
+![|556](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/f8d030f28ede735d1f355f8c437e2c1e.jpeg)
 
 ---
 
@@ -349,12 +349,12 @@ published: 2024-10-09
 
 **<font style="color:rgb(27, 27, 27);">类似的，还有一个Access bit，任何时候一个page被读或者被写了，这个Access bit会被设置。Access bit通常被用来实现这里的LRU策略。</font>**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/2d0b873df771635685b7c6a7e50416e0.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/2d0b873df771635685b7c6a7e50416e0.jpeg)
 
 ## [<font style="color:rgb(27, 27, 27);">8.6 Memory Mapped Files</font>](https://mit-public-courses-cn-translatio.gitbook.io/mit6-s081/lec08-page-faults-frans/8.6-memory-mapped-files)
 **<font style="color:rgb(27, 27, 27);">这节课最后要讨论的内容，也是后面的一个实验，就是memory mapped files。这里的核心思想是，将完整或者部分文件加载到内存中，这样就可以通过内存地址相关的load或者store指令来操纵文件。为了支持这个功能，一个现代的操作系统会提供一个叫做mmap的系统调用。这个系统调用会接收一个虚拟内存地址（VA），长度（len），protection，一些标志位，一个打开文件的文件描述符，和偏移量（offset）。</font>**
 
-![550](https://raw.githubusercontent.com/ScuDays/MyImg/master/f5e07799c1a0780dee5a0c06d0c4f102.jpeg)
+![550](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/f5e07799c1a0780dee5a0c06d0c4f102.jpeg)
 
 **<font style="color:rgb(27, 27, 27);">这里的语义就是，从文件描述符对应的文件的偏移量的位置开始，映射长度为len的内容到虚拟内存地址VA，同时我们需要加上一些保护，比如只读或者读写。</font>**
 
@@ -362,7 +362,7 @@ published: 2024-10-09
 
 **<font style="color:rgb(27, 27, 27);">当完成操作之后，会有一个对应的unmap系统调用，参数是虚拟地址（VA），长度（len）。来表明应用程序已经完成了对文件的操作，在unmap时间点，我们需要将dirty block写回到文件中。我们可以很容易的找到哪些block是dirty的，因为它们在PTE中的dirty bit为1。</font>**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/733cfbb4a28a2c4189cc3a774af71ae7.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/733cfbb4a28a2c4189cc3a774af71ae7.jpeg)
 
 **<font style="color:rgb(27, 27, 27);">当然，在任何聪明的内存管理机制中，所有的这些都是以lazy的方式实现。你不会立即将文件内容拷贝到内存中，而是先记录一下这个PTE属于这个文件描述符。</font>**
 

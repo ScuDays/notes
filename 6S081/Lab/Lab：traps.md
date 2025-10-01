@@ -45,7 +45,7 @@ r_fp()
 }
 ```
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/84129531170053244ecfc3c922278ae0.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/84129531170053244ecfc3c922278ae0.jpeg)
 
 ```bash
 void backtrace()

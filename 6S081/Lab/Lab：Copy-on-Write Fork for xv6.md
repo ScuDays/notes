@@ -29,9 +29,9 @@ draft: false
 
 + **<font style="color:rgb(51, 51, 51);">修改完之后，我们希望得到一个什么结果呢？</font>**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/9de38f1b3ebdeeda7a800783d2f715a5.png)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/9de38f1b3ebdeeda7a800783d2f715a5.png)
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/a4700cdc0c67013cbcf3ef537f52b7b6.png)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/a4700cdc0c67013cbcf3ef537f52b7b6.png)
 
 **我们想要获得一个 scause 为 13 或者 15 的错误，因为我们清除了父进程和子进程页表的读权限，所以当程序访问数据的时候，理应会有该错误。**
 

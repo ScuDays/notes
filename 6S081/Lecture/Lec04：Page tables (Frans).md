@@ -35,7 +35,7 @@ published: 2024-07-31
 
 **<font style="color:#000000;">这样就实现了强隔离，每个程序都只能访问自己的内存空间。</font>**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/caaded5140c0a20abb05e554a9a24a7a.png)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/caaded5140c0a20abb05e554a9a24a7a.png)
 
 ## <font style="color:#000000;">页表（Page Table）</font>
 ### <font style="color:#000000;">内存管理单元（MMU，Memory Management Unit）</font>
@@ -54,7 +54,7 @@ published: 2024-07-31
 
 1. <font style="color:#000000;">MMU并不会保存page table，它只会根据 SATP 的值，到内存中读取page table，然后完成翻译</font>
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/03c8532cb3b9d98f2062ee22f909b3c9.png)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/03c8532cb3b9d98f2062ee22f909b3c9.png)
 
 ### <font style="color:#000000;">页表构建方式</font>
 + **<font style="color:#000000;">如果为每个地址都构建一个表单条目会怎么样？</font>**
@@ -82,14 +82,14 @@ published: 2024-07-31
 1. <font style="color:#000000;">读取index可以知道物理内存中的page号，这个page号对应了物理内存中的第 4096个字节。</font>
 2. <font style="color:#000000;">之后虚拟内存地址中的offset指向了page中的4096个字节中的某一个，假设offset是12，那么page中的第12个字节被使用了。将offset加上page的起始地址，就可以得到物理内存地址。</font>
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/baa379b01859884963d64f53bdc53104.png)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/baa379b01859884963d64f53bdc53104.png)
 
 #### <font style="color:#000000;">第二步</font>
 **<font style="color:#000000;">通过前面的第一步，我们现在的</font>****<font style="color:#000000;background-color:#FBDE28;">地址转换表是以page为粒度，而不是以单个内存地址为粒度</font>****<font style="color:#000000;">，</font>**
 
 **<font style="color:#000000;">现在这个地址转换表已经可以被称为page table了。但是目前的设计还不能满足实际的需求。如果每个进程都有自己的page table，那么每个page table表会有多大呢？</font>**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/575c33a2a24190be37e51ac3727f9d69.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/575c33a2a24190be37e51ac3727f9d69.jpeg)
 
 **<font style="color:#000000;">这个page table最多会有2^27个条目（虚拟内存地址中的index长度为27），这是个非常大的数字。如果每个进程都使用这么大的page table，进程需要为page table消耗大量的内存，并且很快物理内存就会耗尽。</font>**
 
@@ -111,7 +111,7 @@ published: 2024-07-31
 
 **<font style="color:#000000;">在最低级的page directory中，我们可以得到对应于虚拟内存地址的物理内存地址。</font>**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/cf095262d3ed2d0e3f0b1f22de8043de.png)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/cf095262d3ed2d0e3f0b1f22de8043de.png)
 
 + <font style="color:#000000;">比较</font>
 
@@ -133,7 +133,7 @@ published: 2024-07-31
 + <font style="color:#000000;">User表明这个page可以被运行在用户空间的进程访问。</font>
 + <font style="color:#000000;">其他标志位并不是那么重要，他们偶尔会出现，前面5个是重要的标志位。</font>
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/df61cd9859e812df312c2da3ec586678.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/df61cd9859e812df312c2da3ec586678.jpeg)
 
 #### <font style="color:#000000;">RISC-V</font><font style="color:#000000;">硬件设计</font>
 + **<font style="color:#000000;">虚拟内存地址只使用了 39 位</font>**
@@ -178,16 +178,16 @@ published: 2024-07-31
 
 **<font style="color:#000000;">下图就是内核中地址的对应关系，左边是内核的虚拟地址空间，右边上半部分是物理内存或者说是DRAM，右边下半部分是I/O设备。接下来我会首先介绍右半部分，然后再介绍左半部分。</font>**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/071cd924a12937ad3269179253bb6b2a.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/071cd924a12937ad3269179253bb6b2a.jpeg)
 
 #### <font style="color:#000000;">硬件设计</font>
 **<font style="color:#000000;">图中的右半部分的结构完全由硬件设计者决定。如你们上节课看到的一样，当操作系统启动时，会从地址0x80000000开始运行，这个地址其实也是由硬件设计者决定的。具体的来说，如果你们看一个主板，中间是RISC-V处理器，我们现在知道了处理器中有4个核，每个核都有自己的MMU和TLB。处理器旁边就是DRAM芯片。</font>**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/b46196db2b703d3cc557d9ff17c5aa4c.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/b46196db2b703d3cc557d9ff17c5aa4c.jpeg)
 
 **<font style="color:#000000;">主板的设计人员决定了，在完成了虚拟到物理地址的翻译之后，如果得到的物理地址大于0x80000000会走向DRAM芯片，如果得到的物理地址低于0x80000000会走向不同的I/O设备。这是由这个主板的设计人员决定的物理结构。如果你想要查看这里的物理结构，你可以阅读主板的手册，手册中会一一介绍物理地址对应关系。</font>**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/28104bde5163149e6d8eb98e0e7de286.jpeg)![](https://raw.githubusercontent.com/ScuDays/MyImg/master/3b007bab5c013ec6a08a6c4532ab5614.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/3b007bab5c013ec6a08a6c4532ab5614.jpeg)
 
 **<font style="color:#000000;">首先，地址0是保留的，地址0x10090000对应以太网，地址0x80000000对应DDR内存，处理器外的易失存储（Off-Chip Volatile Memory），也就是主板上的DRAM芯片。所以，在你们的脑海里应该要记住这张主板的图片，即使我们接下来会基于你们都知道的C语言程序---QEMU来做介绍，但是最终所有的事情都是由主板硬件决定的。</font>**
 
@@ -202,7 +202,7 @@ published: 2024-07-31
 
 **<font style="color:#000000;">地址0x1000是boot ROM的物理地址，当你对主板上电，主板做的第一件事情就是运行存储在boot ROM中的代码，当boot完成之后，会跳转到地址0x80000000，操作系统需要确保在地址0x80000000有一些数据（代码）能够继续启动操作系统。</font>**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/9d3bb8872d91c43ce29e6986ecd4ca33.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/9d3bb8872d91c43ce29e6986ecd4ca33.jpeg)
 
 **<font style="color:#000000;">这里还有一些其他的I/O设备：</font>**
 
@@ -234,7 +234,7 @@ published: 2024-07-31
 
 **<font style="color:#000000;">比如说内核会按照这种方式设置page table，虚拟地址0x02000000对应物理地址0x02000000。这意味着左侧低于PHYSTOP的虚拟地址，与右侧使用的物理地址是一样的。</font>**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/2ef6af6b5d68f461f506e0da6d5fdcae.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/2ef6af6b5d68f461f506e0da6d5fdcae.jpeg)
 
 **<font style="color:#000000;">所以，这里的箭头都是水平的，因为这里是完全相等的映射。</font>**
 
@@ -244,7 +244,7 @@ published: 2024-07-31
 
 **<font style="color:#000000;">同时，kernel stack被映射了两次，在靠后的虚拟地址映射了一次，在PHYSTOP下的Kernel data中又映射了一次，但是实际使用的时候用的是上面的部分，因为有Guard page会更加安全。</font>**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/d08ee996ccad19f887b128177e1fdf46.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/d08ee996ccad19f887b128177e1fdf46.jpeg)
 
 **<font style="color:#000000;">这是众多你可以通过page table实现的有意思的事情之一。</font>**
 
@@ -256,7 +256,7 @@ published: 2024-07-31
 
 **<font style="color:#000000;">（注，所以，kernel text用来存代码，代码可以读，可以运行，但是不能篡改，kernel data用来存数据，数据可以读写，但是不能通过数据伪装代码在kernel中运行）</font>**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/3fdb9d8bc6f055e50cc742b2c2d375ff.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/3fdb9d8bc6f055e50cc742b2c2d375ff.jpeg)
 
 > **<font style="color:#000000;">学生提问：对于不同的进程会有不同的kernel stack吗？</font>**
 >
@@ -270,7 +270,7 @@ published: 2024-07-31
 >
 > **<font style="color:#000000;">Frans教授：在kernel page table中，有一段Free Memory，它对应了物理内存中的一段地址。</font>**
 >
-> ![](https://raw.githubusercontent.com/ScuDays/MyImg/master/fca2715c3429cefa77ac0eccea153beb.jpeg)
+> ![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/fca2715c3429cefa77ac0eccea153beb.jpeg)
 >
 > **<font style="color:#000000;">XV6使用这段free memory来存放用户进程的page table，text和data。如果我们运行了非常多的用户进程，某个时间点我们会耗尽这段内存，这个时候fork或者exec会返回错误。</font>**
 >
@@ -296,7 +296,7 @@ published: 2024-07-31
 
 <font style="color:#000000;">（</font>**<font style="color:#000000;">用户进程的虚拟地址空间分布</font>**<font style="color:#000000;">）</font>
 
-![用户进程的虚拟地址空间分布（用户页表）​​​​​​](https://raw.githubusercontent.com/ScuDays/MyImg/master/5e3d95bf4363af0ed5c1f04cf38b26a5.jpeg)
+![用户进程的虚拟地址空间分布（用户页表）​​​​​​](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/5e3d95bf4363af0ed5c1f04cf38b26a5.jpeg)
 
 > **<font style="color:#000000;">它有由内核设置好的，专属于进程的page table来完成地址翻译。</font>**
 >

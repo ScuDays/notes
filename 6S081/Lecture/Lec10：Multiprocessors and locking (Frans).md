@@ -134,7 +134,7 @@ amoswap.w.rl x0, x0, (a0) # Release lock by storing 0.
 
 **xv6使用 __sync_synchronize 指示 memory barrier 内存屏障，防止屏障前后的代码重排，这可以确定绝大部分情况的指令顺序（有些例外在下一章节教授）。对应的 RISC-V 指令是 **`**fence**`** 。**
 
-![|662](https://raw.githubusercontent.com/ScuDays/MyImg/master/419c61fe72b5679e94673e29bd60fff4.png)
+![|662](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/419c61fe72b5679e94673e29bd60fff4.png)
 
 ## 死锁和锁获取顺序
 

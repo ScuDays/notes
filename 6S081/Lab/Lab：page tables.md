@@ -22,7 +22,7 @@ published: 2024-08-31
 + **level2 每一项中遍历 level1，**
 + **level1 每一项中遍历 level0，得到实际物理地址，停止。**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/08e7075231433ce2149508fd303d7179.png)
+![](../../photo/08e7075231433ce2149508fd303d7179.png)
 
 + **解决代码**
 
@@ -84,7 +84,7 @@ void vmprint_help(pagetable_t pagetable, int level)
 >
 > 1. **向右移位 10 位**
 >
-> ![](https://raw.githubusercontent.com/ScuDays/MyImg/master/08e7075231433ce2149508fd303d7179.png)
+> ![](../../photo/08e7075231433ce2149508fd303d7179.png)
 >
 > **如图所示，整个 PTE 共有 54 位，左边 44 位为 PPN -- 即下一页表的地址；右边 10 位为 flags -- 即标志位。我们要找到下一级页表物理位置，显然与右边 10 位 flags 位没关系，所以向右移位 10 位，抹除标志位。**
 >
@@ -101,7 +101,7 @@ void vmprint_help(pagetable_t pagetable, int level)
 
 **各个页面都代表什么内容**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/a2f4b877f9bebea58d8609c87ef3eb45.jpeg)
+![](../../photo/a2f4b877f9bebea58d8609c87ef3eb45.jpeg)
 
 ## <font style="color:rgb(0, 0, 0);">A kernel page table per process (</font>[<font style="color:rgb(0, 0, 0);">hard</font>](https://pdos.csail.mit.edu/6.S081/2020/labs/guidance.html)<font style="color:rgb(0, 0, 0);">)</font>
 ### **目标：**
@@ -137,7 +137,7 @@ void vmprint_help(pagetable_t pagetable, int level)
 + **etext(kerenl data and physical RAM that we'll use)**
 + **TRAMPOLINE(蹦床页面)**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/d9f98a22cff9181b13e6e6d7559570e0.png)
+![](../../photo/d9f98a22cff9181b13e6e6d7559570e0.png)
 
 2. **然后对调度器进行更改**
 
@@ -145,7 +145,7 @@ void vmprint_help(pagetable_t pagetable, int level)
 
 **回答:因为我们需要保证当前使用的页表不会被释放，如果我们继续使用之前的页表，那个页表可能回事一个等待被释放的页表，那么我们的 satp 寄存器将会指向一个 NULL 指针，这会引发错误。**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/44e089f1e126c48e49ec361856f064c7.png)
+![](../../photo/44e089f1e126c48e49ec361856f064c7.png)
 
 ## Simplify copyin/copyinstr（hard）
 ### **目标：**
@@ -158,7 +158,7 @@ void vmprint_help(pagetable_t pagetable, int level)
 ### **解决方案：**
 **遍历两张页表，并设置标志位**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/be9aab8e6ef475e88486b99f623db512.png)
+![](../../photo/be9aab8e6ef475e88486b99f623db512.png)
 
 **问题：**
 
@@ -170,4 +170,4 @@ void vmprint_help(pagetable_t pagetable, int level)
 
 **回答：其实父进程和子进程的用户页表确实一样，但是我们要考虑到在复制结束之前，父进程如果结束并释放了，那么父进程的页表也会被清空，这个时候复制函数拥有的是一个指向 NULL 的页表，这就是问题。**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/4ffa898314f82d6c3b99925b0bc21787.png)
+![](../../photo/4ffa898314f82d6c3b99925b0bc21787.png)

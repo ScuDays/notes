@@ -49,13 +49,13 @@ published: 2024-07-31
 >
 > **<font style="color:#000000;">TA：global表示你可以在其他文件中调用这个函数。text表明这里的是代码，如果你还记得XV6中的图3.4，每个进程的page table中有一个区域是text，汇编代码中的text表明这部分是代码，并且位于page table的text区域中。text中保存的就是代码。</font>**
 >
-> ![|679](https://raw.githubusercontent.com/ScuDays/MyImg/master/8b82119f429df174871e208b46e393b8.jpeg)
+> ![|679](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/8b82119f429df174871e208b46e393b8.jpeg)
 
-![|768](https://raw.githubusercontent.com/ScuDays/MyImg/master/51a51c08c5fd7a1906160766544943b2.jpeg)
+![|768](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/51a51c08c5fd7a1906160766544943b2.jpeg)
 
 ## <font style="color:#000000;">5.4 RISC-V寄存器</font>
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/6191616ebd37535e26016bcba4d1e7ea.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/6191616ebd37535e26016bcba4d1e7ea.jpeg)
 
 + **<font style="color:#000000;">寄存器的作用和重要性</font>**<font style="color:#000000;">：寄存器是CPU上用于存储数据的预定义位置，对于执行汇编代码尤为重要。寄存器比内存有更快的数据访问速度，因此在进行算术运算（如加减法）时，优先在寄存器上操作。数据首先从内存加载到寄存器，操作完成后，结果可以存储回内存或传递给其他寄存器。</font>
 + **<font style="color:#000000;">函数调用与寄存器</font>**<font style="color:#000000;">：特别指出a0到a7这些寄存器在函数调用中的作用，主要用于传递函数参数和返回值。如果一个函数的参数超过8个，则需要使用内存来传递额外的参数。</font>
@@ -74,7 +74,7 @@ published: 2024-07-31
 
 <font style="color:#000000;">下面是一个非常简单的栈的结构图，其中每一个区域都是一个Stack Frame，每执行一次函数调用就会产生一个Stack Frame。</font>
 
-![|677](https://raw.githubusercontent.com/ScuDays/MyImg/master/49d659f4b057ab03e41519208241acb9.jpeg)
+![|677](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/49d659f4b057ab03e41519208241acb9.jpeg)
 
 **<font style="color:#000000;">在一个进程中，进程有一个栈,进程中的每个函数调用都会创建一个栈帧，栈帧存储在进程的栈中，这些栈帧共同构成了进程的调用栈  </font>**
 
@@ -102,28 +102,28 @@ published: 2024-07-31
 
 **<font style="color:#000000;">所以，在汇编代码中，函数的最开始你们通常可以看到Function prologue，之后是函数的本体，最后是Epilogue。这就是一个汇编函数通常的样子。</font>**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/4afcc4ced6e7f617c0bbfb8b5e7fa46f.png)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/4afcc4ced6e7f617c0bbfb8b5e7fa46f.png)
 
 ---
 
 > # <font style="color:#000000;">举例</font>
-> ![|731](https://raw.githubusercontent.com/ScuDays/MyImg/master/08f66a6cc8af1689d17524887e42da69.jpeg)
+> ![|731](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/08f66a6cc8af1689d17524887e42da69.jpeg)
 >
 > **<font style="color:#000000;">之前的 sum_to函数中，只有函数主体，并没有Stack Frame的内容。它这里能正常工作的原因是它足够简单，并且它是一个leaf函数。leaf函数是指不调用别的函数的函数，它的特别之处在于它不用担心保存自己的Return address或者任何其他的Caller Saved寄存器，因为它不会调用别的函数。</font>**
 >
 > **<font style="color:#000000;">而另一个函数sum_then_double就不是一个leaf函数了，这里你可以看到它调用了sum_to。</font>**
 >
-> ![](https://raw.githubusercontent.com/ScuDays/MyImg/master/771a9c043af82b2d6fc5e1d6157a1703.jpeg)
+> ![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/771a9c043af82b2d6fc5e1d6157a1703.jpeg)
 >
 > **<font style="color:#000000;">所以在这个函数中，需要包含prologue。</font>**
 >
-> ![](https://raw.githubusercontent.com/ScuDays/MyImg/master/abce147d0f24159da3588d94553e36bf.jpeg)
+> ![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/abce147d0f24159da3588d94553e36bf.jpeg)
 >
 > **<font style="color:#000000;">这里我们对Stack Pointer减16，这样我们为新的Stack Frame创建了16字节的空间。之后我们将Return address保存在Stack Pointer位置。</font>**
 >
 > **<font style="color:#000000;">之后就是调用sum_to并对结果乘以2。最后是Epilogue，</font>**
 >
-> ![](https://raw.githubusercontent.com/ScuDays/MyImg/master/2834cf40f21041bab1b3962af1dc71ec.jpeg)
+> ![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/2834cf40f21041bab1b3962af1dc71ec.jpeg)
 >
 > **<font style="color:#000000;">这里首先将Return address加载回ra寄存器，通过对Stack Pointer加16来删除刚刚创建的Stack Frame，最后ret从函数中退出。</font>**
 >
@@ -135,11 +135,11 @@ published: 2024-07-31
 
 > <font style="color:#000000;">是的，完全正确，我们可以看一下具体会发生什么。先在修改过的sum_then_double设置断点，然后执行sum_then_double。</font>
 >
-> ![|580](https://raw.githubusercontent.com/ScuDays/MyImg/master/7c47a646932a065b9bd9ed70a26c6ea3.jpeg)
+> ![|580](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/7c47a646932a065b9bd9ed70a26c6ea3.jpeg)
 >
 > **<font style="color:#000000;">我们可以看到现在的ra寄存器是0x80006392，它指向demo2函数，也就是sum_then_double的调用函数。之后我们执行代码，调用了sum_to。</font>**
 >
-> ![|573](https://raw.githubusercontent.com/ScuDays/MyImg/master/776574b1628a33128389b46d39e4b329.jpeg)
+> ![|573](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/776574b1628a33128389b46d39e4b329.jpeg)
 >
 > **<font style="color:#000000;">我们可以看到ra寄存器的值被sum_to重写成了0x800065f4，指向sum_then_double，这也合理，符合我们的预期。我们在函数sum_then_double中调用了sum_to，那么sum_to就应该要返回到sum_then_double。</font>**
 >
@@ -161,15 +161,15 @@ published: 2024-07-31
 
 > <font style="color:#000000;">接下来我们来看一些C代码。</font>
 >
-> ![|709](https://raw.githubusercontent.com/ScuDays/MyImg/master/885e56061b0048ffaa3dfcd9d718770f.jpeg)
+> ![|709](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/885e56061b0048ffaa3dfcd9d718770f.jpeg)
 >
 > **<font style="color:#000000;">demo4函数里面调用了dummymain函数。我们在dummymain函数中设置一个断点，</font>**
 >
-> ![|625](https://raw.githubusercontent.com/ScuDays/MyImg/master/c58444c3d7d0db25c7a01a42d0d7906c.jpeg)
+> ![|625](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/c58444c3d7d0db25c7a01a42d0d7906c.jpeg)
 >
 > **<font style="color:#000000;">现在我们在dummymain函数中。如果我们在gdb中输入info frame，可以看到有关当前Stack Frame许多有用的信息。</font>**
 >
-> ![](https://raw.githubusercontent.com/ScuDays/MyImg/master/6e3232435713e25fed5f7ba5e8aa82bf.jpeg)
+> ![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/6e3232435713e25fed5f7ba5e8aa82bf.jpeg)
 >
 > + **<font style="color:#000000;">Stack level 0，表明这是调用栈的最底层</font>**
 > + **<font style="color:#000000;">pc，当前的程序计数器</font>**
@@ -179,11 +179,11 @@ published: 2024-07-31
 >
 > **<font style="color:#000000;">如果输入backtrace（简写bt）可以看到从当前调用栈开始的所有Stack Frame。</font>**
 >
-> ![|727](https://raw.githubusercontent.com/ScuDays/MyImg/master/606c4cc5d04779e2767e87bc4e3616ae.jpeg)
+> ![|727](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/606c4cc5d04779e2767e87bc4e3616ae.jpeg)
 >
 > **<font style="color:#000000;">如果对某一个Stack Frame感兴趣，可以先定位到那个frame再输入info frame，假设对syscall的Stack Frame感兴趣。</font>**
 >
-> ![|682](https://raw.githubusercontent.com/ScuDays/MyImg/master/49d47e50905a44d287725cade4b4d3da.jpeg)
+> ![|682](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/49d47e50905a44d287725cade4b4d3da.jpeg)
 >
 > **<font style="color:#000000;">在这个Stack Frame中有更多的信息，有一堆的Saved Registers，有一些本地变量等等。这些信息对于调试代码来说超级重要。</font>**
 >

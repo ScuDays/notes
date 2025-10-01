@@ -325,7 +325,7 @@ kill(int pid)
 
 **例如： virtio_disk.c 中相关函数，因为确实需要等待磁盘 IO 的完成。****这个过程涉及到多次读写磁盘。我们希望完成所有的文件系统操作，完成整个系统调用。之后再检查p->killed并退出。**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/483945095ebcc7092c4a3d8251ec3e02.png)
+![](../../photo/483945095ebcc7092c4a3d8251ec3e02.png)
 
 **所以kill系统调用并不是真正的立即停止进程的运行，而是继续完成现在的任务或者根据判断返回，但进程并未被停止，一直运行****直到 usertrap()函数中 检查 p->killed 后调用 exit(-1)才会停止。**
 

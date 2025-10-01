@@ -25,7 +25,7 @@ published: 2024-08-19
 
 **以下是 Shell尝试执行wrtie系统调用的一个例子。**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/afdee4563acf1377910baa29e493a855.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/afdee4563acf1377910baa29e493a855.jpeg)
 
 **我们需要清楚程序是如何从****<font style="background-color:#FBDE28;">只拥有user权限并且位于用户空间的Shell，切换到拥有supervisor权限的内核。</font>**
 
@@ -35,7 +35,7 @@ published: 2024-08-19
 
 **RISC-V总共有32个比如a0，a1这样的寄存器，用户应用程序可以使用全部的寄存器，并且使用寄存器的指令性能是最好的。**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/50ee4b019eddd520e222e31d9a4d4dec.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/50ee4b019eddd520e222e31d9a4d4dec.jpeg)
 
 **这里的很多寄存器都有特殊的作用。其中一个特别有意思的寄存器是stack pointer（也叫做堆栈寄存器 stack register）。**
 
@@ -50,7 +50,7 @@ published: 2024-08-19
 
 **这些寄存器表明了执行系统调用时计算机的状态。**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/fd5141d96e761738204429a7a3470023.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/fd5141d96e761738204429a7a3470023.jpeg)
 
 **可以肯定的是，****<font style="background-color:#FBDE28;">在trap的最开始，CPU的所有状态都设置成运行用户代码而不是内核代码。在trap处理的过程中，我们需要更改一些这里的状态。这样我们才可以运行系统内核中普通的C程序。</font>******
 
@@ -143,26 +143,26 @@ published: 2024-08-19
 7. **除此之外，最终还有一些工作只能在汇编语言中完成。这部分工作通过汇编语言实现，并且存在于trampoline.s文件中的userret函数中。**
 8. **最终，在这个汇编函数中会调用机器指令返回到用户空间，并且恢复ECALL之后的用户程序的执行。**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/6808be4f798aad630e54cfa286fe7bed.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/6808be4f798aad630e54cfa286fe7bed.jpeg)
 
 ## 6.3 ECALL指令之前的状态
 **<font style="background-color:#FBDE28;">我们将跟踪一个XV6的系统调用，也就是Shell将它的提示信息通过write系统调用走到操作系统再输出到console的过程。</font>**
 
 **你们可以看到，用户代码sh.c初始了这一切。**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/137746c2af12496083ed29a978ae853d.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/137746c2af12496083ed29a978ae853d.jpeg)
 
 **上图中选中的行，是一个write系统调用，它将“$ ”写入到文件描述符2。接下来我将打开gdb并启动XV6。**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/4d33213c4dba7b33af8eb543899af064.png)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/4d33213c4dba7b33af8eb543899af064.png)
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/4e2224fd5b136d7ff65fcd4e38dab8f7.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/4e2224fd5b136d7ff65fcd4e38dab8f7.jpeg)
 
 **作为用户代码的Shell调用write时，实际上调用的是关联到Shell的一个库函数。**
 
 **在usys.s 中你可以查看这个库函数的源代码**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/976a8c3d629960b16f4274b0d2460a6c.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/976a8c3d629960b16f4274b0d2460a6c.jpeg)
 
 **上面这几行代码就是实际被调用的write函数的实现。**
 
@@ -176,21 +176,21 @@ published: 2024-08-19
 
 **<font style="background-color:#FBDE28;">为了展示这里的系统调用，在ecall指令处放置一个断点</font>****，为了能放置断点，我们需要知道ecall指令的地址，我们可以通过查看由XV6编译过程产生的sh.asm找出这个地址。sh.asm是带有指令地址的汇编代码（注，asm文件3.7有介绍）。我这里会在ecall指令处放置一个断点，这条指令的地址是0xde6。**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/918c0ab2a8eabd5f62f2ef759d025d66.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/918c0ab2a8eabd5f62f2ef759d025d66.jpeg)
 
 **开始运行**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/fb6478569280348b9ea057d0b130c0d3.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/fb6478569280348b9ea057d0b130c0d3.jpeg)
 
 **从gdb可以看出，我们下一条要执行的指令就是ecall。我们来检验一下我们是否真的在我们认为的位置**
 
 **我们打印程序计数器（Program Counter），确实是我们期望的位置0xde6。**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/2f122fe38e6ed242d088b7f3b6798cc3.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/2f122fe38e6ed242d088b7f3b6798cc3.jpeg)
 
 **我们还可以输入**_**info reg**_**打印全部32个用户寄存器**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/b9d735c9c98052d42271e089aff65fa6.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/b9d735c9c98052d42271e089aff65fa6.jpeg)
 
 **这里有一些数值我们还不知道是什么，我们也不关心。**
 
@@ -204,7 +204,7 @@ published: 2024-08-19
 
 **在进行系统调用时，会发生许多重要的状态变更，其中最关键的是当前的页表（page table）。在变更页表之前，我们依赖它来维护内存管理的正确性。我们可以通过查看STAP寄存器来观察页表的状态。  **
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/a2da09e9cfa460ee585cd4903ff11d9c.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/a2da09e9cfa460ee585cd4903ff11d9c.jpeg)
 
 **这里输出的只是页表的物理内存地址，它并没有告诉我们有关page table中的映射关系。**
 
@@ -212,7 +212,7 @@ published: 2024-08-19
 
 **从QEMU界面，输入**_**ctrl a + c**_**可以进入到QEMU的console，之后输入**_**info mem**_**，QEMU会打印完整的page table。**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/a51c25b83fa5916058ae0453ec2f3c0b.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/a51c25b83fa5916058ae0453ec2f3c0b.jpeg)
 
 **这是个非常小的page table，它只包含了6条映射关系。这是用户程序Shell的page table，而Shell是一个非常小的程序，这6条映射关系是有关Shell的指令和数据，以及一个无效的page用来作为guard page，以防止Shell尝试使用过多的stack page。**
 
@@ -228,12 +228,12 @@ published: 2024-08-19
 
 **接下来，我会在Shell中打印出write函数的内容。**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/29a6e09de5500e16feaf0b3419caae6a.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/29a6e09de5500e16feaf0b3419caae6a.jpeg)
 
 ## 6.4 ECALL指令之后的状态
 + **<font style="background-color:#FBDE28;">执行ecall指令 </font>**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/a5d5d1fd23969c898a0eb4f756b914a9.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/a5d5d1fd23969c898a0eb4f756b914a9.jpeg)
 
 ---
 
@@ -241,7 +241,7 @@ published: 2024-08-19
 
 **通过打印程序计数器（Program Counter）查看。**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/034ff92e7a5787d48bb284b62d2aaaa3.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/034ff92e7a5787d48bb284b62d2aaaa3.jpeg)
 
 **可以看到程序计数器的值发生了变化，之前程序计数器(PC)还在一个很小的地址0xde6，但现在是一个大得多的地址。**
 
@@ -249,15 +249,15 @@ published: 2024-08-19
 
 **可以看出，这还是与之前完全相同的page table，所以page table没有改变。**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/2b04e48fcd0cb0503a8c0eb2f35c2ae2.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/2b04e48fcd0cb0503a8c0eb2f35c2ae2.jpeg)
 
 ---
 
 **根据现在的程序计数器（PC），代码正在trampoline page（蹦床内存页）的最开始，这是用户进程内存中非常大的地址。**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/f4499e88e7309478c74b65c664e80e37.png)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/f4499e88e7309478c74b65c664e80e37.png)
 
-**所以现在我们的指令正运行在内存的trampoline page中。我们可以来查看一下现在将要运行的指令。**![](https://raw.githubusercontent.com/ScuDays/MyImg/master/56091c7708f9c806aa82d7c2ae39bd7d.jpeg)
+**所以现在我们的指令正运行在内存的trampoline page中。我们可以来查看一下现在将要运行的指令。**![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/56091c7708f9c806aa82d7c2ae39bd7d.jpeg)
 
 **这些指令是内核在supervisor mode中将要执行的最开始的几条指令，也是在trap机制中最开始要执行的几条指令。**
 
@@ -270,7 +270,7 @@ published: 2024-08-19
 
 **我们可以查看寄存器，对比6.3中的图可以看出，寄存器的值并没有改变，这里还是用户程序拥有的一些寄存器内容。**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/0f7a0d95e6a4fa8c9e0010364286bcf7.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/0f7a0d95e6a4fa8c9e0010364286bcf7.jpeg)
 
 **所以，现在寄存器里面还都是用户程序的数据，并且这些数据也还只保存在这些寄存器中，所以我们需要非常小心。**
 
@@ -299,7 +299,7 @@ published: 2024-08-19
 
 **在从内核空间进入到用户空间之前，内核会设置STVEC寄存器指向内核希望trap代码运行的位置-也就是****trampoline page的起始位置**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/383c94a904908e60353e1b16d6f7cd0a.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/383c94a904908e60353e1b16d6f7cd0a.jpeg)
 
 ---
 
@@ -335,13 +335,13 @@ published: 2024-08-19
 + **<font style="background-color:#FBDE28;">第二，ecall将程序计数器的值保存在了SEPC寄存器。（必须在这里就保存好 PC 的值，</font>**
 + **<font style="background-color:#FBDE28;">ecall 之后 PC 中的值为指向 trampoline page 中的代码）</font>**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/81af6be5d73176039089240e9d599e56.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/81af6be5d73176039089240e9d599e56.jpeg)
 
 **尽管其他的寄存器还是还是用户寄存器，但是这里的程序计数器明显已经不是用户代码的程序计数器。这里的程序计数器是从STVEC寄存器拷贝过来的值。**
 
 **我们可以打印SEPC（Supervisor Exception Program Counter）寄存器，这是ecall保存用户程序计数器的地方。**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/002d97166ce36e365cb234eada06332e.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/002d97166ce36e365cb234eada06332e.jpeg)
 
 **这个寄存器里面有熟悉的地址0xde6，这是ecall指令在用户空间的地址。所以ecall至少保存了程序计数器的数值。**
 
@@ -490,7 +490,7 @@ csrrw a0, sscratch, a0
 
 **如果你想查看XV6在trapframe page中存放了什么，这部分代码在proc.h中的trapframe结构体中。**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/225f99a9012a265ddc947c5fa6995952.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/225f99a9012a265ddc947c5fa6995952.jpeg)
 
     - **你可以看到大部分槽位的名字都对应了特定的寄存器。**
     - **<font style="background-color:#FBDE28;">在最开始有5个数据，这些是内核事先存放在trapframe中的数据。</font>**
@@ -507,15 +507,15 @@ csrrw a0, sscratch, a0
     - **更重要的是，RISC-V 有一个指令允许交换任意两个寄存器的值。而SSCRATCH寄存器的作用就是保存另一个寄存器的值，并将自己的值加载给另一个寄存器。**
 + **如果我查看trampoline.S代码**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/d26149d201ae836fa8c82537ffac4207.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/d26149d201ae836fa8c82537ffac4207.jpeg)
 
 **第一件事情就是执行csrrw指令，这个指令交换了a0和sscratch两个寄存器的内容。为了看这里的实际效果，我们来打印a0，**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/1f67f4a1a932e3485828ee4e07788cb2.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/1f67f4a1a932e3485828ee4e07788cb2.jpeg)
 
 **现在 a0 的值是0x3fffffe000，这是 trapframe page 的 virtual address。它之前保存在SSCRATCH寄存器中，但现在被交换到了a0中。我们也可以打印SSCRATCH寄存器，**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/680b2292de65074354ab50444da11988.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/680b2292de65074354ab50444da11988.jpeg)
 
 **它现在的内容是2，这是a0寄存器之前的值。a0寄存器保存的是write函数的第一个参数，在这个场景下，是Shell传入的文件描述符2。**
 
@@ -537,8 +537,9 @@ csrrw a0, sscratch, a0
 **我们在寄存器拷贝的结束位置设置了一个断点，在gdb中让代码继续执行**
 
 1. **<font style="background-color:#FBDE28;">现在我们执行下面这条ld（load）指令，加载内核栈。</font>**
+![318f6a93de2bbe1d815bea163d5e638f.jpeg](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/318f6a93de2bbe1d815bea163d5e638f.jpeg)
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/318f6a93de2bbe1d815bea163d5e638f.jpeg)![](https://raw.githubusercontent.com/ScuDays/MyImg/master/225f99a9012a265ddc947c5fa6995952.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/225f99a9012a265ddc947c5fa6995952.jpeg)
 
 + 现在 a0 的值是 trapframe page 的地址
 + **ld 这条指令将a0指向的内存地址往后数8个字节开始的数据加载到Stack Pointer寄存器。所以我们知道当前加载的数据是内核的栈 Stack Pointer(kernel_sp) 的值。**
@@ -548,7 +549,7 @@ csrrw a0, sscratch, a0
 
 **我们打印一下当前的Stack Pointer寄存器，验证。**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/9f671282615b2ca8f095aeb61a10381d.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/9f671282615b2ca8f095aeb61a10381d.jpeg)
 
 **目前 ****Stack Pointer 寄存器的值****确实是当前进程的 kernel stack。**
 
@@ -560,7 +561,7 @@ csrrw a0, sscratch, a0
 
 **在RISC-V中，没有直接的方法可以确认当前运行在多核处理器的哪个核上，XV6会将CPU核的编号也就是hartid保存在tp寄存器。在内核中好几个地方都会使用了这个值，例如，内核可以通过这个值确定某个CPU核上运行了哪些进程。我们执行这条指令，并且打印tp寄存器。**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/2464da0a7e80afa0e4e700333d063599.png)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/2464da0a7e80afa0e4e700333d063599.png)
 
 我们现在运行在CPU核0，这很合理，因为我之前配置了QEMU只给XV6分配一个核，所以我们只能运行在核0上。
 
@@ -570,13 +571,13 @@ csrrw a0, sscratch, a0
 
 **在后面我们将会使用该寄存器，通过** _**<font style="background-color:#FBDE28;">jr t0</font>**__** **_**进入 ****usertrap() 。**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/0dd368cea4d84c1a5afa14f6843ee5a8.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/0dd368cea4d84c1a5afa14f6843ee5a8.jpeg)
 
 ---
 
 4. **<font style="background-color:#FBDE28;">下一条指令是向t1寄存器写入数据。</font>****这里写入的是 kernel page table 的地址，我们可以打印t1寄存器的内容。**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/c4d26db4d749c3951552284a667b9d9f.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/c4d26db4d749c3951552284a667b9d9f.jpeg)
 
 实际上严格来说，t1的内容并不是kernel page table的地址，这是你需要向SATP寄存器写入的数据。它包含了kernel page table的地址，但是移位了（注，详见4.3），并且包含了各种标志位。
 
@@ -584,9 +585,9 @@ csrrw a0, sscratch, a0
 
 5. **<font style="background-color:#FBDE28;">下一条指令是交换SATP和t1寄存器。</font>****这条指令执行完成之后，当前程序会从 user page table 切换到 kernel page table。现在我们在QEMU中打印 page table，可以看出与之前的page table完全不一样，已经切换成了内核页表。**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/bf71e6dc068b4bd09a35cbc57deffaec.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/bf71e6dc068b4bd09a35cbc57deffaec.jpeg)
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/8258b336dff00416fd9ddaea1d57645b.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/8258b336dff00416fd9ddaea1d57645b.jpeg)
 
 **现在这里输出的是由内核设置好的巨大的kernel page table。所以现在我们成功的切换了page table，我们在这个位置进展的很好，Stack Pointer指向了kernel stack；我们有了kernel page table，可以读取kernel data。我们已经准备好了执行内核中的C代码了。**
 
@@ -598,7 +599,7 @@ csrrw a0, sscratch, a0
 
 6. **<font style="background-color:#FBDE28;">最后一条指令是</font>**_**<font style="background-color:#FBDE28;">jr t0</font>**_**。执行这条指令后，我们就从 trampoline 跳到内核的C代码中。这条指令的作用是跳转到t0指向的函数中。我们打印 t0 之后的指令**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/fdc57c91efe997bd9fe1b9cab24d8430.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/fdc57c91efe997bd9fe1b9cab24d8430.jpeg)
 
 **可以看到t0的位置对应于一个叫做usertrap函数的开始。接下来我们就要以栈为 kernel stack，页表为 kernel page table 跳转到usertrap函数。**
 
@@ -616,7 +617,7 @@ csrrw a0, sscratch, a0
 
 1. **usertrap 函数所做的第一件事情是更改STVEC寄存器，指向了kernelvec变量，这是内核空间trap处理代码的位置，而不是用户空间中的。**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/1a090533d20cfad50ea43d08ddd44eba.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/1a090533d20cfad50ea43d08ddd44eba.jpeg)
 
 （ 注释说明了代码的意图：既然已经在内核中了，所有后续的中断和异常都应该发送到 `kerneltrap()` 处理函数。`w_stvec` 是一个宏或函数，用来将 `stvec` 寄存器（保存中断入口地址的寄存器）设置为 `kernelvec`，即内核中断处理函数的地址。这确保了所有进一步的中断或异常都由内核代码处理。  ）
 
@@ -631,7 +632,7 @@ csrrw a0, sscratch, a0
 
 2. **出于各种原因，我们需要知道当前运行的是哪个进程，我们通过调用myproc函数来做到这一点。**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/1ec0b4fe4e7ab5d19de91ab2f124d5ef.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/1ec0b4fe4e7ab5d19de91ab2f124d5ef.jpeg)
 
 **myproc函数实际上会查找一个根据当前CPU核的编号索引的数组，CPU核的编号是hartid，我们之前在uservec函数中将它存在了tp寄存器中。这是myproc函数找出当前运行进程的方法。**
 
@@ -639,7 +640,7 @@ csrrw a0, sscratch, a0
 
 3. **接下来我们要保存用户程序计数器 (PC)**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/d9ebac62437f0da1debb8af80081120f.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/d9ebac62437f0da1debb8af80081120f.jpeg)
 
 **<u>它仍然保存在SEPC寄存器中，但是可能发生这种情况：当程序还在内核中执行时，我们可能切换到另一个进程，并进入到那个程序的用户空间，然后那个进程可能再调用一个系统调用进而导致SEPC寄存器的内容被覆盖。</u>**
 
@@ -658,11 +659,11 @@ csrrw a0, sscratch, a0
 
 4. **接下来我们需要找出什么原因导致调用了 usertrap 函数。**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/9f9ec5bf0d2b6309b6cde15d5317ae02.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/9f9ec5bf0d2b6309b6cde15d5317ae02.jpeg)
 
 **对于不同触发trap的原因，RISC-V 的 SCAUSE 寄存器内会有不同的数字。**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/54499f1e6e8c41e07ab10d6e6c02a847.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/54499f1e6e8c41e07ab10d6e6c02a847.jpeg)
 
 **打印SCAUSE寄存器，它是数字8，所以可以确定我们是因为系统调用才走到这里的。**
 
@@ -670,7 +671,7 @@ csrrw a0, sscratch, a0
 
 5. **进入 if 判断，第一件事情是检查是不是有其他的进程杀掉了当前进程，我们的Shell没被杀掉，所以检查通过。**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/c88e29252ee2d09af811c072d297a314.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/c88e29252ee2d09af811c072d297a314.jpeg)
 
 **<font style="background-color:#FBDE28;">在RISC-V中，存储在SEPC寄存器中的程序计数器的值，是用户程序最后触发 trap 指令的地址。</font>**
 
@@ -689,15 +690,15 @@ csrrw a0, sscratch, a0
 + **我们需要在调整完必要的寄存器后再启用中断。中断可能会改变 **`**sstatus**`** 寄存器和其他寄存器的状态，因此，在这些寄存器被安全地恢复或更新之前，不应该允许新的中断发生。  **
 + **XV6会在处理系统调用的时候使能中断，这样中断可以更快的服务，有些系统调用需要许多时间处理。中断总是会被RISC-V的trap硬件关闭，所以在这个时间点，我们需要显式的打开中断。**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/8ef08e7f99a8fe3789b54632f8a6673a.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/8ef08e7f99a8fe3789b54632f8a6673a.jpeg)
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/109fe6629fe40d3d2528d0e408b5a077.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/109fe6629fe40d3d2528d0e408b5a077.jpeg)
 
 ---
 
 7. **下一行代码中，我们会调用 syscall() 函数,真正执行系统调用，这个函数定义在syscall.c。**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/a0cf6931a1e4a4a57b5b9a119c01f409.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/a0cf6931a1e4a4a57b5b9a119c01f409.jpeg)
 
 + **syscall() 根据系统调用的编号查找相应的系统调用函数。**
 + **Shell 调用的 write 函数将寄存器 a7 设置成了系统调用编号，对于 write 来说就是16。**
@@ -706,20 +707,20 @@ csrrw a0, sscratch, a0
 
 **我们打印 num，的确是16。这与Shell调用的write函数写入的数字是一致的。**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/b1d73df08ff34f4f33d70b79f468ae47.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/b1d73df08ff34f4f33d70b79f468ae47.jpeg)
 
 + **之后查看通过num索引得到的函数，正是sys_write函数。sys_write函数是内核对于write系统调用的具体实现。**
 + **对于系统调用的实现，我们只对进入和跳出内核感兴趣，不讨论具体sys_write 系统调用代码。这里我让代码直接执行sys_write函数。**
 + **系统调用需要找到它们的参数。write函数的参数分别是文件描述符2，写入数据缓存的指针，写入数据的长度2。**
 + **<font style="background-color:#FBDE28;">syscall函数直接通过trapframe来获取这些参数，就像这里刚刚可以查看trapframe中的a7寄存器一样，我们可以查看a0寄存器，这是第一个参数，a1是第二个参数，a2是第三个参数。</font>**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/81596a719d5a48c66c514850d39e09d3.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/81596a719d5a48c66c514850d39e09d3.jpeg)
 
 ---
 
 8. **现在syscall执行了真正的系统调用，之后sys_write返回，在 syscall 中我们会存储函数的返回值**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/12345cfba2873b811d6703fc050d3372.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/12345cfba2873b811d6703fc050d3372.jpeg)
 
 + **存储函数的返回值**
 
@@ -728,7 +729,7 @@ csrrw a0, sscratch, a0
 1. **<font style="background-color:#FBDE28;">所有的系统调用都有一个返回值，比如write会返回实际写入的字节数，而 RISC-V 上的C代码的习惯是函数的返回值存储于寄存器a0，所以为了模拟函数的返回，我们将返回值存储在trapframe的a0中。</font>**
 2. **<font style="background-color:#FBDE28;">之后，当我们返回到用户空间，trapframe中的a0槽位的数值会写到实际的a0寄存器，Shell会认为a0寄存器中的数值是write系统调用的返回值。执行完这一行代码之后，我们打印这里trapframe中a0的值，可以看到输出2。</font>**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/d93b6d63b31ddd2e3d75c055d12524bf.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/d93b6d63b31ddd2e3d75c055d12524bf.jpeg)
 
 **这意味这sys_write的返回值是2，符合传入的参数，这里只写入了2个字节。**
 
@@ -738,11 +739,11 @@ csrrw a0, sscratch, a0
 
 **从syscall函数返回之后，我们回到了trap.c中的usertrap函数。**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/ef2fd88600114979d48559dfdcb7a83e.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/ef2fd88600114979d48559dfdcb7a83e.jpeg)
 
 **我们再次检查当前用户进程是否被杀掉了，因为我们不想恢复一个被杀掉的进程。当然，在我们的场景中，Shell没有被杀掉。**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/3a0a0ac3412a40b95f9a4dfe5b9e3e9e.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/3a0a0ac3412a40b95f9a4dfe5b9e3e9e.jpeg)
 
 **最后，usertrap调用了一个函数usertrapret。**
 
@@ -760,7 +761,7 @@ csrrw a0, sscratch, a0
 
 1. **usertrapret() 首先关闭了中断。**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/776180bfea37db393209192f641f2a5f.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/776180bfea37db393209192f641f2a5f.jpeg)
 
 + **我们之前在系统调用的过程中打开了中断**
 + **这里关闭中断是因为我们将要更新 STVEC 寄存器来指向用户空间的trap处理代码，**
@@ -774,7 +775,7 @@ csrrw a0, sscratch, a0
 
 2. **在下一行我们设置了STVEC寄存器指向trampoline代码**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/6b3910038ef19c8ed3419328f017d8b5.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/6b3910038ef19c8ed3419328f017d8b5.jpeg)
 
 + **在那里最终会执行sret指令返回到用户空间。**
 + **位于trampoline代码最后的sret指令会重新打开中断。**
@@ -784,7 +785,7 @@ csrrw a0, sscratch, a0
 
 3. **接下来的几行填入了trapframe的内容，这些内容对于执行trampoline代码非常有用。**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/facc5f179edf6c3da6839553e905d10e.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/facc5f179edf6c3da6839553e905d10e.jpeg)
 
 **这里的代码：**
 
@@ -801,7 +802,7 @@ csrrw a0, sscratch, a0
 + **<font style="background-color:#FBDE28;">这是一个控制寄存器。</font>****<font style="background-color:#FBDE28;">这个寄存器的SPP bit位控制了sret指令的行为，该bit为0表示下次执行sret的时候，我们想要回到 user mode 而不是 supervisor mode</font>****。**
 + **同时这个寄存器的SPIE bit位控制了，在执行完sret之后，是否打开中断。****我们在返回到用户空间之后，我们希望打开中断，所以这里将 SPIE bit位设置为1。修改完这些bit位之后，我们会把新的值写回到SSTATUS寄存器。**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/b8d2a278ecffd189013e5a2f5d5fdf77.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/b8d2a278ecffd189013e5a2f5d5fdf77.jpeg)
 
 ---
 
@@ -814,14 +815,14 @@ csrrw a0, sscratch, a0
 + **userret() 的最后执行了 sret 指令。这条指令会将程序计数器设置成 SEPC 寄存器的值。**
 + **所以现在我们将 SEPC 寄存器的值设置成之前保存的用户程序计数器的值。**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/1aa35dd4eac7b98504d4f58211e6f21a.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/1aa35dd4eac7b98504d4f58211e6f21a.jpeg)
 
 ---
 
 6. **更改 SATP 为用户页表的值**
 + **接下来，我们根据 user page table 地址生成相应的SATP值，这样我们在返回到用户空间的时候才能完成page table的切换。实际上，我们会在汇编代码trampoline 中完成page table的切换，并且也只能在trampoline中完成切换，因为只有trampoline中代码是同时在用户和内核空间中映射。**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/fa90cd18fa0f063c8e3cf6c58d777909.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/fa90cd18fa0f063c8e3cf6c58d777909.jpeg)
 
 ---
 
@@ -830,7 +831,7 @@ csrrw a0, sscratch, a0
 + **倒数第二行的作用是****<font style="background-color:#FBDE28;">计算出我们将要跳转到汇编代码的地址。我们期望跳转的地址是tampoline中的userret函数，这个函数包含了所有能将我们带回到用户空间的指令。所以这里我们计算出了userret函数的地址。</font>****  （接下来跳转到）**
 + **倒数第一行，将fn指针作为一个函数指针，执行相应的函数（也就是userret函数）并传入两个参数，两个参数存储在a0，a1寄存器中。**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/fa90cd18fa0f063c8e3cf6c58d777909.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/fa90cd18fa0f063c8e3cf6c58d777909.jpeg)
 
 ---
 
@@ -900,7 +901,7 @@ userret:
 
 1. **第一步是切换page table。**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/05cf7068d68ca1b566727919d79ed86f.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/05cf7068d68ca1b566727919d79ed86f.jpeg)
 
 + **在执行**_**csrw satp, a1 **_**之前，page table 应该还是巨大的kernel page table。**
 + **这条指令会将user page table（在usertrapret中作为第二个参数传递给了这里的userret函数，所以存在a1寄存器中）存储在SATP寄存器中。**
@@ -912,7 +913,7 @@ userret:
 
 2. **将SSCRATCH寄存器恢复成保存好的用户的a0寄存器。**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/e44d639dbc7b53a0a4477106c5da2c71.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/e44d639dbc7b53a0a4477106c5da2c71.jpeg)
 
 + **在uservec函数中，第一件事情就是交换 SSRATCH 和 a0 寄存器。而这里，我们将 SSCRATCH 寄存器恢复成保存好的用户的 a0 寄存器。**
 + **在这里 a0 是 trapframe 的地址，因为C代码 usertrapret() 中将trapframe地址作为第一个参数传递过来了。112是a0寄存器在trapframe中的位置。**
@@ -926,7 +927,7 @@ userret:
 
 3. **接下来恢复原本的用户寄存器数据**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/59738ab62d83f62c395e5f06272dd2db.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/59738ab62d83f62c395e5f06272dd2db.jpeg)
 
 **接下来的这些指令将a0寄存器指向的trapframe中，之前保存的寄存器的值加载到对应的各个寄存器中。之后，我们离能真正运行用户代码就很近了。**
 
@@ -936,14 +937,14 @@ userret:
 >
 > **Robert教授：是的，系统调用的返回值覆盖了我们保存在trapframe中的a0寄存器的值（详见6.6）。我们希望用户程序Shell在a0寄存器中看到系统调用的返回值。所以，trapframe中的a0寄存器现在是系统调用的返回值2。相应的SSCRATCH寄存器中的数值也应该是2，可以通过打印寄存器的值来验证。**
 >
-> ![](https://raw.githubusercontent.com/ScuDays/MyImg/master/e0be42ad6f89b0bebfba71e88550966e.jpeg)
+> ![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/e0be42ad6f89b0bebfba71e88550966e.jpeg)
 >
 
 ---
 
 4. **现在我们打印所有的寄存器**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/adb35302371aceb098324603efad7cb1.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/adb35302371aceb098324603efad7cb1.jpeg)
 
 + **这些寄存器的值就是我们在最最开始看到的用户寄存器的值。例如SP寄存器保存的是user stack地址，这是一个在较小的内存地址；a1寄存器是我们传递给write的buffer指针，a2是我们传递给write函数的写入字节数。**
 + **a0寄存器现在还是个例外，它现在仍然是指向trapframe的指针，而不是保存了的用户数据。**
@@ -954,7 +955,7 @@ userret:
 
 5. **交换SSCRATCH寄存器和a0寄存器的值**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/be708111e8a94ba316426bf501b35a47.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/be708111e8a94ba316426bf501b35a47.jpeg)
 
 + **接下来，在我们即将返回到用户空间之前，我们交换SSCRATCH寄存器和a0寄存器的值。前面我们看过了SSCRATCH现在的值是系统调用的返回值2，a0寄存器是trapframe的地址。交换完成之后，a0持有的是系统调用的返回值，SSCRATCH持有的是trapframe的地址。之后trapframe的地址会一直保存在SSCRATCH中，直到用户程序执行了另一次trap。现在我们还在kernel中。**
 
@@ -962,7 +963,7 @@ userret:
 
 6. **执行sret 返回用户空间**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/be708111e8a94ba316426bf501b35a47.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/be708111e8a94ba316426bf501b35a47.jpeg)
 
 **sret是我们在kernel中的最后一条指令，当执行完这条指令：**
 
@@ -976,11 +977,11 @@ userret:
 
 **打印PC寄存器**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/9aaa320c3967a3073d870123fbd5e1ee.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/9aaa320c3967a3073d870123fbd5e1ee.jpeg)
 
 **这是一个较小的指令地址，非常像是在用户内存中。如果我们查看sh.asm，可以看到这个地址是write函数的ret指令地址。**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/46b7782fb3727c6c85f7336ef2f52814.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/46b7782fb3727c6c85f7336ef2f52814.jpeg)
 
 **所以，现在我们回到了用户空间，执行完ret指令之后我们就可以从write系统调用返回到Shell中了。**
 

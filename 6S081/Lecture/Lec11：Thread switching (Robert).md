@@ -10,7 +10,7 @@ published: 2024-10-22
 ## 总结：
 ### 上下文切换
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/a0130c8603bcdbd4e832c783c5186ac6.png)
+![](../../photo/a0130c8603bcdbd4e832c783c5186ac6.png)
 
 **<font style="color:rgb(51, 51, 51);">图7.1概述了从一个用户进程（旧进程）切换到另一个用户进程（新进程）所涉及的步骤：</font>**
 

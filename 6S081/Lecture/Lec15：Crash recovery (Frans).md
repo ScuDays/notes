@@ -206,7 +206,7 @@ XV6的**log**结构如往常一样也是极其的简单。
 
 **在XV6中，以创建文件的sys_open为例（在sysfile.c文件中）每个文件系统操作，都有begin_op和end_op分别表示事物的开始和结束。**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/8dbba1deb9194076df6c568273e1f35e.png)  
+![](../../photo/8dbba1deb9194076df6c568273e1f35e.png)  
 begin_op 标志着事务的开始，而 end_op 切标志着事务的结束。
 
 在这两者之间的所有写入操作都是原子性的，即这些操作要么全部成功执行，要么都不执行。
@@ -221,11 +221,11 @@ XV6 文件系统的调用遵循这一模式：先调用 begin_op，然后执行�
 
 让我们看一下fs.c中的ialloc，
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/28f31067d12d39934ac1f1140abb7adc.png)
+![](../../photo/28f31067d12d39934ac1f1140abb7adc.png)
 
 在这个函数中，并没有直接调用bwrite，这里实际调用的是log_write函数。log_write是由文件系统的logging实现的方法。任何一个文件系统调用的begin_op和end_op之间的写操作总是会走到log_write。log_write函数位于log.c文件，
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/a1f7039c5e430d374815bcdbe7c4d05e.png)
+![](../../photo/a1f7039c5e430d374815bcdbe7c4d05e.png)
 
 **log_write **的过程相对简单直观。当我们向 **block cache **中的某个 **block**（如 block 45）写入数据后，下一步是在内存中标记该 **block **需要在未来的 **commit** 操作中被写入磁盘的日志。  
 具体步骤如下：

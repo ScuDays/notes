@@ -45,6 +45,14 @@
     {
       "folder": "RTOS",
       "template": "_模板/note-RTOS.md"
+    },
+    {
+      "folder": "ICSAS",
+      "template": "_模板/ICSAS.md"
+    },
+    {
+      "folder": "",
+      "template": ""
     }
   ],
   "enable_file_templates": false,

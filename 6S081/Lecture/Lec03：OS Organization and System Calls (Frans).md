@@ -58,7 +58,7 @@ published: 2024-07-11
 
 ## <font style="color:#000000;">User/Kernel mode切换</font>
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/2d65f259dcb8d59dc44a6d9ab45247af.png)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/2d65f259dcb8d59dc44a6d9ab45247af.png)
 
 + **<font style="color:#000000;">当在用户态的应用程序想要调用系统调用时，是如何切换到内核态并执行系统调用呢？</font>**
 
@@ -66,7 +66,7 @@ published: 2024-07-11
 
 **<font style="color:#000000;">在RISC-V中，有一个专门的指令用来实现这个功能，叫做ECALL。ECALL接收一个数字参数，当一个用户程序想要将程序执行的控制权转移到内核，它只需要执行ECALL指令，并传入一个数字。这里的数字参数代表了应用程序想要调用的System Call。</font>**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/ef317aead6996c187e95bbde72c2a13f.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/ef317aead6996c187e95bbde72c2a13f.jpeg)
 
 **<font style="color:#000000;">ECALL会跳转到内核中一个特定，由内核控制的位置。我们可以看到在XV6中存在一个唯一的系统调用接入点，每一次应用程序执行ECALL指令，应用程序都会通过这个接入点进入到内核中。</font>**
 
@@ -74,7 +74,7 @@ published: 2024-07-11
 
 **<font style="color:#000000;">下图中通过一根竖线来区分用户空间和内核空间，左边是用户空间，右边是内核空间。在内核侧，有一个位于syscall.c的函数syscall，每一个从应用程序发起的系统调用都会调用到这个syscall函数，syscall函数会检查ECALL的参数，通过这个参数内核可以知道需要调用的是fork（3.9会有相应的代码跟踪介绍）。</font>**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/18e990743898636b74fa0ec105db9319.jpeg)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/18e990743898636b74fa0ec105db9319.jpeg)
 
 ## <font style="color:#000000;">宏内核 vs 微内核 （Monolithic Kernel vs Micro Kernel）</font>
 **<font style="color:#000000;">我们可以通过系统调用或者说ECALL指令，将控制权从应用程序转到操作系统中。</font>**
@@ -97,7 +97,7 @@ published: 2024-07-11
 + **<font style="color:#000000;">首先考虑Bug，这种方式不太好。在一个宏内核中，任何一个操作系统的Bug都有可能成为漏洞。因为我们现在内核中运行了一个巨大的操作系统，有许多行代码运行在内核中，出现Bug的可能性更大了。</font>****<font style="color:#000000;background-color:#FBDE28;">所以从安全的角度来说，在内核中有大量的代码是宏内核的缺点。</font>**
 + **<font style="color:#000000;">另一方面，一个操作系统，它包含了各种各样的组成部分，比如说文件系统，虚拟内存，进程管理，这些都是操作系统内实现了特定功能的子模块。宏内核的优势在于，因为这些子模块现在都位于同一个程序中，它们可以紧密的集成在一起，这样的集成提供很好的性能。例如Linux，它就有很不错的性能。</font>**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/4410dec79506c031178fb01c2a488c18.png)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/4410dec79506c031178fb01c2a488c18.png)
 
 + **<font style="color:#000000;">微内核</font>**
 
@@ -114,4 +114,4 @@ published: 2024-07-11
     1. **<font style="color:#000000;">在user/kernel mode反复跳转带来的性能损耗。</font>**
     2. **<font style="color:#000000;">在一个类似宏内核的紧耦合系统，各个组成部分，例如文件系统和虚拟内存系统，可以很容易的共享page cache。而在微内核中，每个部分之间都很好的隔离开了，这种共享更难实现。进而导致更难在微内核中得到更高的性能。</font>**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/80c9209ba6f85825e1a168ab97a5e0d3.png)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/80c9209ba6f85825e1a168ab97a5e0d3.png)

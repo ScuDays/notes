@@ -5,7 +5,7 @@ modify: 2024-12-22 16:40:54
 author: days
 category: 6S081
 published: 2024-06-06
-image: https://raw.githubusercontent.com/ScuDays/MyImg/master/202412230022851.png
+image: https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/202412230022851.png
 ---
 # Lec01：Introduction and Examples (Robert)
 ## 操作系统的目标
@@ -25,11 +25,11 @@ image: https://raw.githubusercontent.com/ScuDays/MyImg/master/202412230022851.pn
 > 7. **最后，对于大部分操作系统，必须要支持大量不同类型的应用程序，或许这是一个笔记本，正在运行文本编辑器，正在运行游戏，或许你的操作系统需要支持数据库服务器和云计算。通常来说，设计并构造一个操作系统代价是非常大的，所以人们总是希望在相同的操作系统上，例如Linux，运行大量的任务。我认为大部分人都已经跑过Linux，并使用了我刚刚描述的所有的场景。所以，同一个操作系统需要能够支持大量不同的用户场景。**
 > 
 
-![|535](https://raw.githubusercontent.com/ScuDays/MyImg/master/9cad3ebcb433436286eed1047fbb8cce.png)
+![|535](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/9cad3ebcb433436286eed1047fbb8cce.png)
 
 ## 操作系统架构
 
-![|511](https://raw.githubusercontent.com/ScuDays/MyImg/master/be423d2631b468ff97829ad4276213be.png)
+![|511](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/be423d2631b468ff97829ad4276213be.png)
 
 ## 文件描述符
 ### 内核为每个进程维护一张文件描述符表  
@@ -66,4 +66,4 @@ image: https://raw.githubusercontent.com/ScuDays/MyImg/master/202412230022851.pn
 
 **这就是fork和exec分离的好处，我们可以在 fork 之后 exec 之前配置一些关键信息。**
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/a5862ec7db9ddcb67843a301f95ce0ea.png)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/a5862ec7db9ddcb67843a301f95ce0ea.png)
