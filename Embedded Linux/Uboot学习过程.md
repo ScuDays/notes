@@ -14,7 +14,7 @@ SRAM 和 DRAM 的区别：
 
 _OCRAM_:On-chip RAM
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/202501092036161.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/202501092036161.png)
 
 - **OCRAM**：片上 RAM（OCRAM）是 i.MX6ULL 内部的高速静态 RAM，大小为 128 KB。在系统启动初期，OCRAM 用于存储临时数据和代码，直到 DDR 内存初始化完成。
 - **ROM**：ROM 中存储了芯片启动时必需的代码和数据，包括 BootStrap 代码、API 向量表和版本信息。
@@ -25,8 +25,8 @@ _OCRAM_:On-chip RAM
 
 - **调试与开发**：开发者可以通过 OCRAM 存储调试信息或临时数据，利用 ROM API 和 HAB API 实现高级功能。
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/202501092105774.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/202501092105774.png)
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/202501092106012.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/202501092106012.png)
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/202501092108682.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/202501092108682.png)

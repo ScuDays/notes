@@ -5,5 +5,5 @@
   "ollamaHost": "http://localhost:11434",
   "ollamaModel": "llama2",
   "aiModel": "deepseek",
-  "deepseekApiKey": "sk-8b601bc2c8554c3fa3681fee9e3eb51e"
+  "deepseekApiKey": "sk-ec1af922435f4f1fa1389487d1898d48"
 }

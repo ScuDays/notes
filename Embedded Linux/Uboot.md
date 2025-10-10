@@ -24,7 +24,7 @@ imx 文件是在 bin 文件的基础上加上了一个头部。
 	- DCD **表中包含了时钟寄存器的地址和寄存器的值**，引脚复用寄存器地址和寄存器的值，DDR 控制器的寄存器地址和寄存器的值。
 	- imx6ull 内部的 BOOTROM (iROM) 程序会根据 DCD 表的内容打开时钟，初始化外部 DDR。
 	- 这样boot ROM程序就会帮我们初始化DDR和其他硬件，然后才可以把bin程序读到DDR中并运行。
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/20250111170742.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/20250111170742.png)
 
 > [!NOTE]
 > 因此 NXP 提供的 **uboot 代码**的汇编阶段没有初始化时钟和初始化 DDR 的相关汇编代码！
@@ -60,15 +60,15 @@ imx 文件是在 bin 文件的基础上加上了一个头部。
 
 ①、 Image vector table，简称 IVT， IVT 里面包含了一系列的地址信息，这些地址信息在 ROM 中按照固定的地址存放着。
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/20250111164003.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/20250111164003.png)
 
 ②、 Boot data，启动数据，包含了镜像要拷贝到哪个地址，拷贝的大小是多少等。
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/20250111164030.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/20250111164030.png)
 
 ③、 Device configuration data，简称 DCD，设备配置信息，重点是 DDR 3 的初始化配置。
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/20250111164041.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/20250111164041.png)
 
 #### BootRom
 - 运行介质：CPU 片上 SRAM
@@ -106,7 +106,7 @@ imx 文件是在 bin 文件的基础上加上了一个头部。
 	- 为内核设置启动参数
 	- 调用内核, 至少初始化串口用于调试
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/20250111195438.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/20250111195438.png)
 
 ### 传统芯片 Uboot 启动方式概要
 
@@ -142,7 +142,7 @@ imx 文件是在 bin 文件的基础上加上了一个头部。
 
 参考：[u-boot启动流程分析-史上最全最详细_u-boot 2023-CSDN博客](https://blog.csdn.net/Wang_XB_3434/article/details/130979224)
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/20250111200020.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/20250111200020.png)
 
 ### 一些主要问题
 - 为什么 uboot 先是在 DDR 起始地址运行，再挪到后面，不能把 uboot 一开始就搬到后面去？
@@ -180,7 +180,7 @@ imx 文件是在 bin 文件的基础上加上了一个头部。
 
 三、board\_init\_f，用于初始化部分外设和初始化 global\_data，这个函数里面有一个函数数组，函数数组中的函数会被依次执行，以此来实现初始化部分外设和 global\_data，这个函数数组在 common/board\_f.c 文件中定义。这里初始化的外设主要是串口，定时器，初始化 global\_data 主要是初始化其中的地址成员，比如 uboot 重定位以后的地址，malloc 区的基地址，新的 global\_data 变量的地址（因为刚开始 global\_data 是放在内部的 IRAM 中的）。这个函数执行以后，**外部 DDR 由原本的一张白纸变成了一段一段划分好的区域**，每一段用于存储不同的内容，如下图所示：
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/20250110211932.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/20250110211932.png)
 
 四、 relocate\_code，就是重定位代码，这个重定位是从 DDR 到 DDR 的重定位，因为对于 imx 6 ull 来说，一开始 uboot 就被加载到了 DDR 上去运行，重定位就是为了把 DDR 前面的位置空出来以加载 Linux 内核，该函数定义在文件 arch/arm/lib/relocate. S 中。
 
@@ -204,23 +204,23 @@ imx 文件是在 bin 文件的基础上加上了一个头部。
 
 如果倒计时结束未按下任意键，会执行环境变量 bootcmd 内的命令启动 Linux 内核，由下图可知，bootcmd 的内容是宏**CONFIG\_BOOTCOMMAND**定义的
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/20250110214757.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/20250110214757.png)
 
 而 CONFIG\_BOOTCOMMAND 是在 XXX\_defconfig 内定义的
 
- ![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/20250110214809.png)
+ ![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/20250110214809.png)
 
  run findfdt，使用的是 uboot 的 run 命令来运行 findfdt， findfdt 是 NXP 自行添加的环境变量，定义如下图。 findfdt 是用来查找开发板对应的设备树文件 (. dtb)
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/20250110214816.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/20250110214816.png)
 
 最终分析下来，CONFIG\_BOOTCOMMAND 干的事情浓缩为以下四步：
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/20250110214823.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/20250110214823.png)
 
  CONFIG\_BOOTCOMMAND 还干了一件事，设置环境变量 bootargs，传递给 linux kernel
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/20250110214831.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/20250110214831.png)
 
 root=/dev/mmcblk 1 p 2”表示根文件系统存储在 /dev/mmcblk 1 p 2 中（即 SD 卡控制器 2 控制的 SD 卡或 EMMC 等设备的分区 2）
 
@@ -228,7 +228,7 @@ root=/dev/mmcblk 1 p 2”表示根文件系统存储在 /dev/mmcblk 1 p 2 中（
 
 一般进入到 uboot 命令以后，我们会使用 tftp 命令或者 nfs 命令把 zImage 加载到 DDR 中去，然后使用 bootz 命令启动，使用 bootz 命令就调用了第一个函数。
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/20250110214840.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/20250110214840.png)
 
 do\_bootz：这个函数主要干三件事。
 
@@ -248,7 +248,7 @@ boot\_jump\_linux 函数调用了一个叫做 kernel\_entry 的函数，这个�
 
 一旦开始执行 kernel\_entry，uboot 的生命周期就结束了。
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/20250110214848.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/20250110214848.png)
 
 参考资料——《正点原子 Linux 驱动开发手册》
 

@@ -7,14 +7,13 @@ category: Embedded Linux
 published: 2024-12-23
 draft: false
 description: 主要讲解Linux系统的文件目录
-image: https://raw.githubusercontent.com/ScuDays/MyImg/master/202412232157147.png
 tags: [Linux]
 ---
 # 总体目录结构
 
 Linux 的目录结构一般遵循 FHS（Filesystem Hierarchy Standard，文件系统层次结构标准）。下面是 FHS 中主要的目录结构：
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/202412232157147.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/202412232157147.png)
 
 ## 系统核心目录
 ### / 

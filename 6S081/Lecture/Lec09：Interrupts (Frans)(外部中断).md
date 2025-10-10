@@ -121,7 +121,7 @@ published: 2024-10-16
 
 **驱动的top部分通常与用户的进程交互，并进行数据的读写**
 
-![](../../photo/9821efee7ea041f80af9016adefa28a4.jpeg)
+![9821efee7ea041f80af9016adefa28a4.jpeg](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/9821efee7ea041f80af9016adefa28a4.jpeg)
 
 **通常情况下，驱动中会有一些队列（或者说buffer），top部分的代码会从队列中读写数据，而Interrupt handler（bottom部分）同时也会向队列中读写数据。这里的队列可以将并行运行的设备和CPU解耦开来。**
 
@@ -137,11 +137,11 @@ published: 2024-10-16
 
 例如，对网卡执行store指令时，CPU会修改网卡的某个控制寄存器，进而导致网卡发送一个packet。所以这里的load/store指令不会读写内存，而是会操作设备。所以需要阅读设备的文档来弄清楚设备的寄存器和相应的行为。
 
-![](../../photo/f274563fec215b11c5d768d3e057379a.jpeg)
+![f274563fec215b11c5d768d3e057379a.jpeg](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/f274563fec215b11c5d768d3e057379a.jpeg)
 
 下图中是SiFive主板中的对应设备的物理地址
 
-![](../../photo/4122c17f43631ce46b3f7391094bdad3.jpeg)
+![4122c17f43631ce46b3f7391094bdad3.jpeg](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/4122c17f43631ce46b3f7391094bdad3.jpeg)
 
 例如，0x200_0000对应CLINT，0xC000000对应的是PLIC。在这个图中UART0对应的是0x1001___0000，但是在QEMU中，我们的UART0的地址略有不同，因为在QEMU中我们并不是完全的模拟SiFive主板，而是模拟与SiFive主板非常类似的东西。
 
@@ -149,7 +149,7 @@ published: 2024-10-16
 
 下图是UART的文档。16550是QEMU模拟的UART设备，QEMU用这个模拟的设备来与键盘和Console进行交互。
 
-![](../../photo/b7badc10e7898530285e6aff3aaec5e0.jpeg)
+![b7badc10e7898530285e6aff3aaec5e0.jpeg](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/b7badc10e7898530285e6aff3aaec5e0.jpeg)
 
 这是一个很简单的芯片，图中表明了芯片拥有的寄存器。例如对于控制寄存器000，如果写它会将数据写入到寄存器中并被传输到其他地方，如果读它可以读出存储在寄存器中的内容。UART可以让你能够通过串口发送数据bit，在线路的另一侧会有另一个UART芯片，能够将数据bit组合成一个个Byte。
 

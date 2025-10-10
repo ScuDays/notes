@@ -14,9 +14,9 @@ description: Makefile的介绍与使用
 
 ### Why we need makefile?
 - 为了自动化管理编译和链接过程
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/202412281512704.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/202412281512704.png)
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/202412281512925.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/202412281512925.png)
 
 ### Make 和 Makefile 是什么关系？
 
@@ -38,7 +38,7 @@ Makefile 文件: 记录依赖关系和编译规则。
 
 一个实例
 
-![image.png|361](https://raw.githubusercontent.com/ScuDays/MyImg/master/202412271955748.png)
+![image.png|361](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/202412271955748.png)
 
 ### Makefile 执行命令的方式
 **Makefile** 最终的执行过程都是通过 **Shell 命令** 来完成的。
@@ -115,9 +115,9 @@ clean:
 
 示例：
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/202412281616104.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/202412281616104.png)
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/202412281617754.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/202412281617754.png)
 
 我们在这里看，好像确实也执行了同样的功能，那为什么需要伪目标呢？
 
@@ -125,9 +125,9 @@ clean:
 
 问题就在于假如当前目录下存在一个 clean 文件呢？
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/202412281618672.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/202412281618672.png)
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/202412281618618.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/202412281618618.png)
 
 当目录下面有一个文件与我们的目标同名且该文件不用被更新的时候，这个目标就不会被执行，所以我们不能正确的执行想要的命令。
 
@@ -163,7 +163,7 @@ clean:
 
 实际被使用要延迟分配的时候，Immediate 的值为 999，所以 Delay 实际的值是 999.
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/202412281930393.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/202412281930393.png)
 
 ##### 变量的引用
 - 变量在使用的时候需要在变量名前加上\"\$\"（有点像 shell），最好使用\" \(\)\"或\"\{\}\"包裹变量
@@ -322,7 +322,7 @@ endif
 
 ### 解决头文件依赖
 > 我们使用 Makefile 通过 make 进行编译的时候，发现会有一些 warning 产生，这是因为我们在 a.c 文件中使用了 b.c 中的函数，却未 include b.h 同时未告诉 Makefile 头文件的位置在哪里，这就导致了这个问题的发生。
-> ![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/202412291314254.png)
+> ![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/202412291314254.png)
 
 给 gcc 使用 -I + .h 用来指定**额外的头文件搜索路径**
 

@@ -24,32 +24,32 @@ description: 使用网络挂载内核镜像、设备树、根文件系统
 
 ## 配置 tftp
 
-![0053.png|493](https://raw.githubusercontent.com/ScuDays/MyImg/master/0053.png)
+![0053.png|493](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/0053.png)
 
-![0054.png|493](https://raw.githubusercontent.com/ScuDays/MyImg/master/0054.png)
+![0054.png|493](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/0054.png)
 
-![0055.png|493](https://raw.githubusercontent.com/ScuDays/MyImg/master/0055.png)
+![0055.png|493](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/0055.png)
 
-![0056.png|493](https://raw.githubusercontent.com/ScuDays/MyImg/master/0056.png)
+![0056.png|493](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/0056.png)
 
-![0057.png|493](https://raw.githubusercontent.com/ScuDays/MyImg/master/00571.png)
+![0057.png|493](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/00571.png)
 
 ## 配置 nfs
 
-![58.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/58.png)
+![58.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/58.png)
 
-![59.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/59.png)
+![59.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/59.png)
 
-![60.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/60.png)
+![60.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/60.png)
 
 ## 网络挂载
 
-![61.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/61.png)
+![61.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/61.png)
 
-![62.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/62.png)
+![62.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/62.png)
 
-![63.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/63.png)
+![63.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/63.png)
 
-![64.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/64.png)
+![64.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/64.png)
 
-![65.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/65.png)
+![65.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/65.png)

@@ -1,48 +1,48 @@
 {
   "recentFiles": [
     {
-      "basename": "ITS 表保存到客户机内存的时机",
-      "path": "ICSAS/ITS 表保存/ITS 表保存到客户机内存的时机.md"
+      "basename": "x86和arm64架构实现-逐渐以小块方式启用脏日志",
+      "path": "ICSAS/RISC-V KVM热迁移优化 part3： 以小块逐步启用脏页日志/x86和arm64架构实现-逐渐以小块方式启用脏日志.md"
     },
     {
-      "basename": "Lec09：Interrupts (Frans)(外部中断)",
-      "path": "6S081/Lecture/Lec09：Interrupts (Frans)(外部中断).md"
+      "basename": "从热迁移启动到位图内存分配的完整过程",
+      "path": "ICSAS/RISC-V KVM热迁移优化 part3： 以小块逐步启用脏页日志/从热迁移启动到位图内存分配的完整过程.md"
     },
     {
-      "basename": "Lec08：Page faults (Frans)",
-      "path": "6S081/Lecture/Lec08：Page faults (Frans).md"
+      "basename": "kvm_set_memslot-虚拟机内存修改函数",
+      "path": "ICSAS/RISC-V KVM热迁移优化 part3： 以小块逐步启用脏页日志/kvm_set_memslot-虚拟机内存修改函数.md"
     },
     {
-      "basename": "Lec06：Isolation & system call entry!exit (Robert)",
-      "path": "6S081/Lecture/Lec06：Isolation & system call entry!exit (Robert).md"
+      "basename": "状态变化回调函数 qemu_add_vm_change_state_handler(vm_change_state_handler, s)",
+      "path": "ICSAS/状态变化回调函数 qemu_add_vm_change_state_handler(vm_change_state_handler, s).md"
     },
     {
-      "basename": "Lec05：Calling conventions and stack frames RISC-V (TA)",
-      "path": "6S081/Lecture/Lec05：Calling conventions and stack frames RISC-V (TA).md"
+      "basename": "migrate 完整调用链路图",
+      "path": "ICSAS/migrate 完整调用链路图.md"
     },
     {
-      "basename": "Lec04：Page tables (Frans)",
-      "path": "6S081/Lecture/Lec04：Page tables (Frans).md"
+      "basename": "QEMU 的双重状态保存机制",
+      "path": "ICSAS/QEMU 的双重状态保存机制.md"
     },
     {
-      "basename": "Lec03：OS Organization and System Calls (Frans)",
-      "path": "6S081/Lecture/Lec03：OS Organization and System Calls (Frans).md"
+      "basename": "完整的热迁移调用通路到ITS保存",
+      "path": "ICSAS/完整的热迁移调用通路到ITS保存.md"
     },
     {
-      "basename": "Lec01：Introduction and Examples (Robert)",
-      "path": "6S081/Lecture/Lec01：Introduction and Examples (Robert).md"
+      "basename": "`vmstate_save` 保存对应架构状态",
+      "path": "ICSAS/`vmstate_save` 保存对应架构状态.md"
     },
     {
-      "basename": "未命名",
-      "path": "未命名.base"
+      "basename": "中断处理",
+      "path": "ICSAS/虚拟化/中断处理.md"
     },
     {
-      "basename": "318f6a93de2bbe1d815bea163d5e638f",
-      "path": "photo/318f6a93de2bbe1d815bea163d5e638f.jpeg"
+      "basename": "QEMU 热迁移架构相关代码",
+      "path": "ICSAS/QEMU 热迁移架构相关代码.md"
     },
     {
-      "basename": "Linux命令行",
-      "path": "常用命令/Linux命令行.md"
+      "basename": "Guest OS 运行和迁移线程的关系",
+      "path": "ICSAS/Guest OS 运行和迁移线程的关系.md"
     },
     {
       "basename": "Lec11：Thread switching (Robert)",
@@ -53,116 +53,72 @@
       "path": "6S081/Lecture/Lec10：Multiprocessors and locking (Frans).md"
     },
     {
-      "basename": "Lab：lazy page allocation",
-      "path": "6S081/Lab/Lab：lazy page allocation.md"
+      "basename": "Lec13：Sleep & Wake up (Robert)",
+      "path": "6S081/Lecture/Lec13：Sleep & Wake up (Robert).md"
     },
     {
-      "basename": "Lab：Multithreading",
-      "path": "6S081/Lab/Lab：Multithreading.md"
+      "basename": "Lec14：File systems (Frans)",
+      "path": "6S081/Lecture/Lec14：File systems (Frans).md"
     },
     {
-      "basename": "Lab：page tables",
-      "path": "6S081/Lab/Lab：page tables.md"
+      "basename": "C 文件的编译过程",
+      "path": "computer basic/C 文件的编译过程.md"
     },
     {
-      "basename": "Lab：System calls",
-      "path": "6S081/Lab/Lab：System calls.md"
-    },
-    {
-      "basename": "Lab：traps",
-      "path": "6S081/Lab/Lab：traps.md"
-    },
-    {
-      "basename": "Lab：Unix utilities",
-      "path": "6S081/Lab/Lab：Unix utilities.md"
-    },
-    {
-      "basename": "Lab：lock",
-      "path": "6S081/Lab/Lab：lock.md"
-    },
-    {
-      "basename": "Lab：Copy-on-Write Fork for xv6",
-      "path": "6S081/Lab/Lab：Copy-on-Write Fork for xv6.md"
+      "basename": "【正点原子】I.MX6U网络环境TFTP&amp;amp;NFS搭建手册V1.1_page-0054",
+      "path": "photo/【正点原子】I.MX6U网络环境TFTP&amp;amp;NFS搭建手册V1.1_page-0054.jpg"
     },
     {
       "basename": "Astro配置与解析",
       "path": "Tools/Astro配置与解析.md"
     },
     {
-      "basename": "QEMU 的双重状态保存机制",
-      "path": "ICSAS/QEMU 的双重状态保存机制.md"
+      "basename": "需要整理",
+      "path": "RTOS/需要整理.md"
     },
     {
-      "basename": "migrate 完整调用链路图",
-      "path": "ICSAS/migrate 完整调用链路图.md"
+      "basename": "Uboot学习过程",
+      "path": "Embedded Linux/Uboot学习过程.md"
     },
     {
-      "basename": "完整的热迁移调用通路到ITS保存",
-      "path": "ICSAS/完整的热迁移调用通路到ITS保存.md"
+      "basename": "Uboot",
+      "path": "Embedded Linux/Uboot.md"
     },
     {
-      "basename": "未命名",
-      "path": "ICSAS/未命名.md"
+      "basename": "Shell脚本编程",
+      "path": "Embedded Linux/Shell脚本编程.md"
     },
     {
-      "basename": "预拷贝 + 停机拷贝",
-      "path": "ICSAS/预拷贝 + 停机拷贝.md"
+      "basename": "Makefile",
+      "path": "Embedded Linux/Makefile.md"
     },
     {
-      "basename": "QEMU 热迁移架构相关代码",
-      "path": "ICSAS/QEMU 热迁移架构相关代码.md"
+      "basename": "Linux系统简介",
+      "path": "Embedded Linux/Linux系统简介.md"
     },
     {
-      "basename": "交叉编译",
-      "path": "Embedded Linux/交叉编译.md"
+      "basename": "Linux文件目录",
+      "path": "Embedded Linux/Linux文件目录.md"
+    },
+    {
+      "basename": "Linux通配符",
+      "path": "Embedded Linux/Linux通配符.md"
+    },
+    {
+      "basename": "Linux嵌入式环境配置（全面避坑）",
+      "path": "Embedded Linux/Linux嵌入式环境配置（全面避坑）.md"
     },
     {
       "basename": "Linux环境变量",
       "path": "Embedded Linux/Linux环境变量.md"
     },
     {
-      "basename": "哪些异常应该由 Guest OS 自己处理，哪些异常必须由 Hypervisor（KVM）介入处理。",
-      "path": "ICSAS/虚拟化/哪些异常应该由 Guest OS 自己处理，哪些异常必须由 Hypervisor（KVM）介入处理。.md"
-    },
-    {
       "basename": "Linux的设备模型",
       "path": "Embedded Linux/Linux的设备模型.md"
     },
     {
-      "basename": "学习过程",
-      "path": "Embedded Linux/学习过程.md"
-    },
-    {
-      "basename": "平台设备驱动框架",
-      "path": "Embedded Linux/平台设备驱动框架.md"
-    },
-    {
-      "basename": "第一个Linux驱动",
-      "path": "Embedded Linux/第一个Linux驱动.md"
-    },
-    {
-      "basename": "构建deb软件安装包",
-      "path": "Embedded Linux/构建deb软件安装包.md"
-    },
-    {
-      "basename": "状态变化回调函数 qemu_add_vm_change_state_handler(vm_change_state_handler, s)",
-      "path": "ICSAS/状态变化回调函数 qemu_add_vm_change_state_handler(vm_change_state_handler, s).md"
-    },
-    {
-      "basename": "那所谓的vm exit 其实就像正常物理的切换特权级要保存一些数据一样？",
-      "path": "ICSAS/虚拟化/那所谓的vm exit 其实就像正常物理的切换特权级要保存一些数据一样？.md"
-    },
-    {
-      "basename": "未命名 1",
-      "path": "ICSAS/虚拟化/未命名 1.md"
-    },
-    {
-      "basename": "未命名 2",
-      "path": "ICSAS/虚拟化/未命名 2.md"
-    },
-    {
-      "basename": "影子页表",
-      "path": "ICSAS/虚拟化/影子页表.md"
+      "basename": "正点原子IMX6ull网络挂载内核镜像、设备树、根文件系统",
+      "path": "Embedded Linux/正点原子IMX6ull网络挂载内核镜像、设备树、根文件系统.md"
     },
     {
       "basename": "kvm如何捕获一些问题进行处理",
@@ -173,32 +129,76 @@
       "path": "ICSAS/虚拟化/中断处理的全流程及状态转换.md"
     },
     {
-      "basename": "Guest OS 运行和迁移线程的关系",
-      "path": "ICSAS/Guest OS 运行和迁移线程的关系.md"
+      "basename": "影子页表",
+      "path": "ICSAS/虚拟化/影子页表.md"
+    },
+    {
+      "basename": "未命名 2",
+      "path": "ICSAS/虚拟化/未命名 2.md"
+    },
+    {
+      "basename": "那所谓的vm exit 其实就像正常物理的切换特权级要保存一些数据一样？",
+      "path": "ICSAS/虚拟化/那所谓的vm exit 其实就像正常物理的切换特权级要保存一些数据一样？.md"
+    },
+    {
+      "basename": "哪些异常应该由 Guest OS 自己处理，哪些异常必须由 Hypervisor（KVM）介入处理。",
+      "path": "ICSAS/虚拟化/哪些异常应该由 Guest OS 自己处理，哪些异常必须由 Hypervisor（KVM）介入处理。.md"
     },
     {
       "basename": "ram_load_precopy处理 RAM 数据接收的核心函数",
       "path": "ICSAS/RAM迁移/ram_load_precopy处理 RAM 数据接收的核心函数.md"
     },
     {
-      "basename": "ITS表保存操作触发时机",
-      "path": "ICSAS/ITS 表保存/ITS表保存操作触发时机.md"
-    },
-    {
-      "basename": "migration_thread三个阶段",
-      "path": "ICSAS/migration_thread/migration_thread三个阶段.md"
-    },
-    {
-      "basename": "migration_thread核心迁移线程",
-      "path": "ICSAS/migration_thread/migration_thread核心迁移线程.md"
-    },
-    {
-      "basename": "`vmstate_save` 保存对应架构状态",
-      "path": "ICSAS/`vmstate_save` 保存对应架构状态.md"
+      "basename": "学习过程",
+      "path": "Embedded Linux/学习过程.md"
     },
     {
       "basename": "需要整理",
-      "path": "RTOS/需要整理.md"
+      "path": "Embedded Linux/需要整理.md"
+    },
+    {
+      "basename": "平台设备驱动框架",
+      "path": "Embedded Linux/平台设备驱动框架.md"
+    },
+    {
+      "basename": "交叉编译",
+      "path": "Embedded Linux/交叉编译.md"
+    },
+    {
+      "basename": "构建deb软件安装包",
+      "path": "Embedded Linux/构建deb软件安装包.md"
+    },
+    {
+      "basename": "第一个Linux驱动",
+      "path": "Embedded Linux/第一个Linux驱动.md"
+    },
+    {
+      "basename": "链接",
+      "path": "computer basic/链接.md"
+    },
+    {
+      "basename": "2024-12-23记",
+      "path": "日记/2024-12-23记.md"
+    },
+    {
+      "basename": "知识漏洞",
+      "path": "_杂念/知识漏洞.md"
+    },
+    {
+      "basename": "学习路线",
+      "path": "_杂念/学习路线.md"
+    },
+    {
+      "basename": "Lab：Unix utilities",
+      "path": "6S081/Lab/Lab：Unix utilities.md"
+    },
+    {
+      "basename": "Lab：traps",
+      "path": "6S081/Lab/Lab：traps.md"
+    },
+    {
+      "basename": "Lab：System calls",
+      "path": "6S081/Lab/Lab：System calls.md"
     }
   ],
   "omittedPaths": [],

@@ -8,15 +8,15 @@ published: 2025-09-01
 draft: false
 ---
 
-我来为你详细梳理从热迁移触发到最终调用`vm_change_state_handler`的完整函数调用通路：
+我来为你详细梳理从热迁移触发到最终调用 `vm_change_state_handler` 的完整函数调用通路：
 
 ## 完整的热迁移调用通路详解
 
-现在我为你梳理从热迁移触发到最终调用`vm_change_state_handler`的**完整函数调用通路**：
+现在我为你梳理从热迁移触发到最终调用 `vm_change_state_handler` 的完整函数调用通路：
 
-### 1. **用户空间入口层 (QEMU)**
+### 1. 用户空间入口层 (QEMU)
 
-```
+```c
 // 用户执行命令
 (qmp) migrate "tcp:target_host:port"
         ↓
@@ -29,9 +29,9 @@ qmp_migrate(const char *uri, ...)
 }
 ```
 
-### 2. **迁移连接建立层**
+### 2. 迁移连接建立层
 
-```
+```c
 // socket连接建立后回调 - migration/migration.c:3672
 migrate_fd_connect(MigrationState *s, Error *error_in)
 {
@@ -48,9 +48,9 @@ migrate_fd_connect(MigrationState *s, Error *error_in)
 }
 ```
 
-### 3. **VM停止处理层**
+### 3. VM 停止处理层
 
-```
+```c
 // VM停止函数 - migration/migration.c:193
 static int migration_stop_vm(MigrationState *s, RunState state)
 {
@@ -65,9 +65,9 @@ static int migration_stop_vm(MigrationState *s, RunState state)
 }
 ```
 
-### 4. **系统运行状态控制层**
+### 4. 系统运行状态控制层
 
-```
+```c
 // 强制停止VM - system/cpus.c:763
 int vm_stop_force_state(RunState state)
 {
@@ -94,9 +94,9 @@ int vm_stop(RunState state)
 }
 ```
 
-### 5. **实际VM停止执行层**
+### 5. 实际 VM 停止执行层
 
-```
+```c
 // 实际停止VM - system/cpus.c:278
 static int do_vm_stop(RunState state, bool send_stop)
 {
@@ -123,9 +123,9 @@ static int do_vm_stop(RunState state, bool send_stop)
 }
 ```
 
-### 6. **状态通知分发层**
+### 6. 状态通知分发层
 
-```
+```c
 // 状态变化通知 - system/runstate.c:357
 void vm_state_notify(bool running, RunState state)
 {
@@ -154,9 +154,9 @@ void vm_state_notify(bool running, RunState state)
 }
 ```
 
-### 7. **ITS设备处理层**
+### 7. ITS 设备处理层
 
-```
+```c
 // ITS设备的状态变化处理器 - hw/intc/arm_gicv3_its_kvm.c:75
 static void vm_change_state_handler(void *opaque, bool running, RunState state)
 {
@@ -174,16 +174,16 @@ static void vm_change_state_handler(void *opaque, bool running, RunState state)
 }
 ```
 
-### 8. **调用链时序图**
+### 8. 调用链时序图
 
 ![](https://cdn.nlark.com/yuque/__mermaid_v3/6edac7dc466d6cf93544f612eb5b2d14.svg)
 
-### 9. **关键要点**
+### 9. 关键要点
 
-1. **触发条件**：`running = false` 且 `state = RUN_STATE_FINISH_MIGRATE`
-2. **执行上下文**：QEMU主线程，非vCPU上下文
-3. **遍历顺序**：VM停止时采用**反向遍历**（第374行），确保清理顺序正确
-4. **注册时机**：ITS设备在初始化时通过 `qemu_add_vm_change_state_handler` 注册回调
-5. **执行时机**：在CPU暂停、状态设置之后，确保VM已完全停止
+1. 触发条件：`running = false` 且 `state = RUN_STATE_FINISH_MIGRATE`
+2. 执行上下文：QEMU 主线程，非 vCPU 上下文
+3. 遍历顺序：VM 停止时采用反向遍历（第 374 行），确保清理顺序正确
+4. 注册时机：ITS 设备在初始化时通过 `qemu_add_vm_change_state_handler` 注册回调
+5. 执行时机：在 CPU 暂停、状态设置之后，确保 VM 已完全停止
 
-这就是从用户发起热迁移命令到最终调用ITS设备的`vm_change_state_handler`的完整调用通路！
+这就是从用户发起热迁移命令到最终调用 ITS 设备的 `vm_change_state_handler` 的完整调用通路！

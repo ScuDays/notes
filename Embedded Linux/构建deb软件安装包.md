@@ -59,11 +59,11 @@ Debian、Ubuntu、Deepin等Linux发行版的软件安装包。
 
 Deb 软件包里面的结构：它具有 DEBIAN 和软件具体安装目录（如 etc, usr, opt, tmp 等）:
 
-```
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/202412261126388.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/202412261126388.png)
 
 ### rpm包
 ##### 概念
+
 RedHat，Fedora，Centos等Linux发行版的软件安装包。
 
 ## dpkg工具
@@ -142,7 +142,7 @@ soft-name
     ...
 ```
 
-![](https://raw.githubusercontent.com/ScuDays/MyImg/master/202412261126388.png)
+![](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/202412261126388.png)
 
 ## 如何构建一个helloworld的deb包
 

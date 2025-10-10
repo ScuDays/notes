@@ -1,16 +1,19 @@
 ---
 title: Lec11：Thread switching (Robert)
-date: 2024-10-22 00:39:59
-modify: 2024-12-22 16:41:08
+date: 2024-10-17 20:22:37
+modify: 2024-10-18 17:04:17
 author: days
 category: 6S081
-published: 2024-10-22
+published: 2024-10-19
+draft: false
 ---
+
+
 # Lec11：Thread switching (Robert)
 ## 总结：
 ### 上下文切换
 
-![](../../photo/a0130c8603bcdbd4e832c783c5186ac6.png)
+![a0130c8603bcdbd4e832c783c5186ac6.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/a0130c8603bcdbd4e832c783c5186ac6.png)
 
 **<font style="color:rgb(51, 51, 51);">图7.1概述了从一个用户进程（旧进程）切换到另一个用户进程（新进程）所涉及的步骤：</font>**
 

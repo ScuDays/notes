@@ -27,7 +27,7 @@ description: Linux的设备模型
 
 在内核源码的drivers中存放了大量的设备驱动代码， 在我们写驱动之前先查看这里的内容，说不定可以在这些目录找到想要的驱动代码。如图所示：
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/20250131122030.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/20250131122030.png)
 
 - 根据步骤编写驱动代码简单粗暴，但存在着问题：
 
@@ -37,7 +37,7 @@ description: Linux的设备模型
 
 Linux引入了设备驱动模型分层的概念，将我们编写的驱动代码分成了两块：设备与驱动。设备负责提供硬件资源而驱动代码负责去使用这些设备提供的硬件资源。并由总线将它们联系起来。这样子就构成以下图形中的关系。
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/20250131122610.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/20250131122610.png)
 
 ## 二.设备模型基础
 
@@ -56,8 +56,8 @@ sysfs是Linux内核提供的一种文件系统，用于将内核中的设备和�
 	- 而drivers下是所有注册在这个总线上的驱动，每个driver子目录下是一些可以观察和修改的driver参数。
 - **/sys/devices**：全局设备结构体系，包含所有被发现并注册在各种总线上的物理设备，/sys/devices是内核对系统中所有设备的分层次表达模型， 也是/sys文件系统管理设备的最重要的目录结构
 - **/sys/class**：按照设备功能分类的设备模型，每种设备都具有特定的功能，归类到相应的目录下。按照设备功能分类的设备模型， 每种设备都具有自己特定的功能，比如：鼠标的功能是作为人机交互的输入，按照设备功能分类无论它挂载在哪条总线上都是归类到/sys/class/input下。
-![image.png|526](https://raw.githubusercontent.com/ScuDays/MyImg/master/20250131124554.png)
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/20250131170846.png)
+![image.png|526](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/20250131124554.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/20250131170846.png)
 在总线上管理着两个链表，分别管理着设备和驱动，当我们向系统注册一个驱动时，便会向驱动的管理链表插入我们的新驱动，同样当我们向系统注册一个设备时，便会向设备的管理链表插入我们的新设备。
 在插入的同时总线会执行一个 bus_type 结构体中 match 的方法对新插入的设备/驱动进行匹配。 (有多种匹配方式，最简单的就是使用名字相同进行匹配)。
 - 在匹配成功的时候会调用驱动 device_driver 结构体中 probe 方法 (通常在 probe 中获取设备资源，具体的功能可由驱动编写人员自定义) ;
@@ -68,7 +68,7 @@ sysfs是Linux内核提供的一种文件系统，用于将内核中的设备和�
 
 总线是连接处理器和设备之间的桥梁，代表着同类设备需要共同遵守的工作时序。大部分设备依靠总线进行通信，例如I2C、USB等。
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/20250131171347.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/20250131171347.png)
 
 ### （二）总线有关代码
 #### 数据结构
@@ -128,7 +128,7 @@ void bus_unregister(struct bus_type *bus);
 
 当我们成功注册总线时，会在/sys/bus/目录下创建一个新目录，目录名为我们新注册的总线名。bus目录中包含了当前系统中已经注册了的所有总线，例如i2c，spi，platform等。我们看到每个总线目录都拥有两个子目录devices和drivers， 分别记录着挂载在该总线的所有设备以及驱动。
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/20250131233643.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/20250131233643.png)
 
 ## 五、设备
 ### （一）设备概念
@@ -139,7 +139,7 @@ void bus_unregister(struct bus_type *bus);
 	- devices 中的所有设备都是连接于某种总线之下，每一种总线之下可以找到每一个具体设备的符号链接，它也是构成 Linux 统一设备模型的重要部分；
 - /sys/dev 
 	- 有两个子目录，block 和 char，存放的是块设备和字符设备的主次号码，形式为 (major:minor)，它指向 /sys/devices 目录下的设备。
-![image.png|545](https://raw.githubusercontent.com/ScuDays/MyImg/master/20250201115445.png)![image.png|353](https://raw.githubusercontent.com/ScuDays/MyImg/master/20250201115609.png)
+![image.png|545](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/20250201115609.png)
 
 
 ***
@@ -151,13 +151,13 @@ void bus_unregister(struct bus_type *bus);
 
 2: 为什么/sys/dev 中只有块设备和字符设备
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/20250201114456.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/20250201114456.png)
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/20250201114513.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/20250201114513.png)
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/20250201114524.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/20250201114524.png)
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/20250201114531.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/20250201114531.png)
 
 ### （二）设备有关代码
 
@@ -276,10 +276,10 @@ void driver_unregister(struct device_driver *drv);
 
 ## 总线、设备、驱动数据结构关系图
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/20250201154009.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/20250201154009.png)
 
 ## 驱动注册流程
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/20250201154343.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/20250201154343.png)
 
 系统启动之后会调用buses_init函数创建/sys/bus文件目录，这部分系统在开机时已经帮我们准备好了， 接下去就是通过总线注册函数bus_register进行总线注册，注册完总线后在总线的目录下生成devices文件夹和drivers文件夹， 最后分别通过device_register以及driver_register函数注册相对应的设备和驱动。

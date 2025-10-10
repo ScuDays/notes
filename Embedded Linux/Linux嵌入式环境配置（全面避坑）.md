@@ -32,17 +32,17 @@ description: ubuntu-vscode-linux驱动开发环境配置
 
 # ubuntu 安装特定版本 gcc
 
-![【正点原子】I.MX6U嵌入式Linux驱动开发指南V1.81-164-169_page-0001.jpg](https://raw.githubusercontent.com/ScuDays/MyImg/master/%E3%80%90%E6%AD%A3%E7%82%B9%E5%8E%9F%E5%AD%90%E3%80%91I.MX6U%E5%B5%8C%E5%85%A5%E5%BC%8FLinux%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97V1.81-164-169_page-0001.jpg)
+![【正点原子】I.MX6U嵌入式Linux驱动开发指南V1.81-164-169_page-0001.jpg](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/%E3%80%90%E6%AD%A3%E7%82%B9%E5%8E%9F%E5%AD%90%E3%80%91I.MX6U%E5%B5%8C%E5%85%A5%E5%BC%8FLinux%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97V1.81-164-169_page-0001.jpg)
 
-![【正点原子】I.MX6U嵌入式Linux驱动开发指南V1.81-164-169_page-0002.jpg](https://raw.githubusercontent.com/ScuDays/MyImg/master/%E3%80%90%E6%AD%A3%E7%82%B9%E5%8E%9F%E5%AD%90%E3%80%91I.MX6U%E5%B5%8C%E5%85%A5%E5%BC%8FLinux%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97V1.81-164-169_page-0002.jpg)
+![【正点原子】I.MX6U嵌入式Linux驱动开发指南V1.81-164-169_page-0002.jpg](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/%E3%80%90%E6%AD%A3%E7%82%B9%E5%8E%9F%E5%AD%90%E3%80%91I.MX6U%E5%B5%8C%E5%85%A5%E5%BC%8FLinux%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97V1.81-164-169_page-0002.jpg)
 
-![【正点原子】I.MX6U嵌入式Linux驱动开发指南V1.81-164-169_page-0003.jpg](https://raw.githubusercontent.com/ScuDays/MyImg/master/%E3%80%90%E6%AD%A3%E7%82%B9%E5%8E%9F%E5%AD%90%E3%80%91I.MX6U%E5%B5%8C%E5%85%A5%E5%BC%8FLinux%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97V1.81-164-169_page-0003.jpg)
+![【正点原子】I.MX6U嵌入式Linux驱动开发指南V1.81-164-169_page-0003.jpg](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/%E3%80%90%E6%AD%A3%E7%82%B9%E5%8E%9F%E5%AD%90%E3%80%91I.MX6U%E5%B5%8C%E5%85%A5%E5%BC%8FLinux%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97V1.81-164-169_page-0003.jpg)
 
-![【正点原子】I.MX6U嵌入式Linux驱动开发指南V1.81-164-169_page-0004.jpg](https://raw.githubusercontent.com/ScuDays/MyImg/master/%E3%80%90%E6%AD%A3%E7%82%B9%E5%8E%9F%E5%AD%90%E3%80%91I.MX6U%E5%B5%8C%E5%85%A5%E5%BC%8FLinux%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97V1.81-164-169_page-0004.jpg)
+![【正点原子】I.MX6U嵌入式Linux驱动开发指南V1.81-164-169_page-0004.jpg](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/%E3%80%90%E6%AD%A3%E7%82%B9%E5%8E%9F%E5%AD%90%E3%80%91I.MX6U%E5%B5%8C%E5%85%A5%E5%BC%8FLinux%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97V1.81-164-169_page-0004.jpg)
 
-![【正点原子】I.MX6U嵌入式Linux驱动开发指南V1.81-164-169_page-0005.jpg](https://raw.githubusercontent.com/ScuDays/MyImg/master/%E3%80%90%E6%AD%A3%E7%82%B9%E5%8E%9F%E5%AD%90%E3%80%91I.MX6U%E5%B5%8C%E5%85%A5%E5%BC%8FLinux%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97V1.81-164-169_page-0005.jpg)
+![【正点原子】I.MX6U嵌入式Linux驱动开发指南V1.81-164-169_page-0005.jpg](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/%E3%80%90%E6%AD%A3%E7%82%B9%E5%8E%9F%E5%AD%90%E3%80%91I.MX6U%E5%B5%8C%E5%85%A5%E5%BC%8FLinux%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97V1.81-164-169_page-0005.jpg)
 
-![【正点原子】I.MX6U嵌入式Linux驱动开发指南V1.81-164-169_page-0006.jpg](https://raw.githubusercontent.com/ScuDays/MyImg/master/%E3%80%90%E6%AD%A3%E7%82%B9%E5%8E%9F%E5%AD%90%E3%80%91I.MX6U%E5%B5%8C%E5%85%A5%E5%BC%8FLinux%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97V1.81-164-169_page-0006.jpg)
+![【正点原子】I.MX6U嵌入式Linux驱动开发指南V1.81-164-169_page-0006.jpg](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/%E3%80%90%E6%AD%A3%E7%82%B9%E5%8E%9F%E5%AD%90%E3%80%91I.MX6U%E5%B5%8C%E5%85%A5%E5%BC%8FLinux%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97V1.81-164-169_page-0006.jpg)
 
 # 正点原子 Linux 内核编译错误
 

@@ -32,11 +32,11 @@ Linux系统由Linus Torvalds （林纳斯·托瓦兹）于1991年发布在新闻
 **==我们说Linux系统时，其含义往往是指采用Linux内核的操作系统。Linux内核负责控制硬件、管理文件系统、进程管理、网络通讯等，但它本身并没有给用户提供必要的工具和应用软件。==**
 由于Linux内核本身是开源的，所以一些人和厂商在其规则之下，基于Linux内核搭配各种各样系统管理软件或应用工具软件，从而组成一套完整可用的操作系统，见下图。我们称这样的系统为**Linux发行版**（distribution）。完整的Linwux系统就如同汽车，Linux内核构成了最为关键的引擎，不同的发行版就类似使用相同引擎的不同车型。
 
-![image.png|310](https://raw.githubusercontent.com/ScuDays/MyImg/master/202412231649504.png)
+![image.png|310](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/202412231649504.png)
 
 Linux 发行版关系
 
-![image.png|468](https://raw.githubusercontent.com/ScuDays/MyImg/master/202412231649474.png)
+![image.png|468](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/202412231649474.png)
 
 至于在开发板上运行的 Linux 系统，可理解为这是针对特定板子而定制的Linux发行版。
 

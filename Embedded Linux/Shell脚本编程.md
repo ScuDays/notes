@@ -30,7 +30,7 @@ tags: [Shell脚本, 编程, Linux]
 
 可通过 type 命令来查询是内置还是外置命令
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/202412241155339.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/202412241155339.png)
 
 #### 内置命令和外置命令的区别
 
@@ -77,7 +77,7 @@ chmod 777 hello.sh
 - 指定解释器运行
 - Source 和.
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/202412241243161.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/202412241243161.png)
 
 ## Shell 脚本语法讲解
 
@@ -101,9 +101,9 @@ chmod 777 hello.sh
 
 - Variable=$(command)
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/202412241336516.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/202412241336516.png)
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/202412241336450.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/202412241336450.png)
 
 ### 删除变量
 - unset
@@ -124,7 +124,7 @@ chmod 777 hello.sh
 
 并排放
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/202412241417867.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/202412241417867.png)
 
 ### 读取从键盘输入的数据
 
@@ -132,15 +132,15 @@ Read
 
 示例 1：
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/202412241419945.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/202412241419945.png)
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/202412241419588.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/202412241419588.png)
 
 示例 2：输出提示文字
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/202412241423887.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/202412241423887.png)
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/202412241423610.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/202412241423610.png)
 
 ### 退出当前进程
 
@@ -150,9 +150,9 @@ Exit
 
 (())
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/202412241445622.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/202412241445622.png)
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/202412241445082.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/202412241445082.png)
 
 ### 逻辑与/或
 
@@ -168,7 +168,7 @@ command1 || command2
 
 Test expression 和[ expression ]
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/202412241558760.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/202412241558760.png)
 
 解释：如果 inputA 与 inputB 相等，则继续执行后面代码。第三行与第四行等价，一般使用第四行[]这一种方式
 
@@ -198,9 +198,9 @@ then
 fi
 ```
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/202412251600909.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/202412251600909.png)
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/202412251600303.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/202412251600303.png)
 
 ### If else 语句
 
@@ -213,9 +213,9 @@ else
 fi
 ```
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/202412251603068.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/202412251603068.png)
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/202412251603696.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/202412251603696.png)
 
 ### If elif else 语句
 ```shell
@@ -231,9 +231,9 @@ else
 fi
 ```
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/202412251606907.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/202412251606907.png)
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/202412251606004.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/202412251606004.png)
 
 ### Case in 语句
 ```shell
@@ -250,9 +250,9 @@ case expression in
 esac
 ```
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/202412251622830.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/202412251622830.png)
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/202412251623376.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/202412251623376.png)
 
 ### For in 循环
 ```shell
@@ -272,29 +272,29 @@ Value_list
 
 直接给出具体的值
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/202412251659233.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/202412251659233.png)
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/202412251700068.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/202412251700068.png)
 
 使用一个取值范围
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/202412251700687.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/202412251700687.png)
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/202412251700785.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/202412251700785.png)
 
 使用命令的执行结果
 
 和使用 Shell 通配符（\*为通配符）[[Linux通配符]]
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/202412251701261.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/202412251701261.png)
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/202412251701619.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/202412251701619.png)
 
 使用特殊变量（上文提到）
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/202412251705696.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/202412251705696.png)
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/202412251706554.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/202412251706554.png)
 
 ### While 循环
 ```shell
@@ -304,9 +304,9 @@ do
 done
 ```
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/202412251714504.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/202412251714504.png)
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/202412251716310.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/202412251716310.png)
 
 ### 函数
 ```shell
@@ -318,15 +318,15 @@ function function_name(){
 
 无返回值无参数函数
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/202412251738555.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/202412251738555.png)
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/202412251739215.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/202412251739215.png)
 
 有返回值有参数函数
 
 - 使用 $1、$2 等特殊变量来获取函数参数
 - 使用 $? 获取返回值（注意：多个函数调用返回值会覆盖这个特殊变量）
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/202412251748289.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/202412251748289.png)
 
-![image.png](https://raw.githubusercontent.com/ScuDays/MyImg/master/202412251748774.png)
+![image.png](https://days-notes.oss-cn-shenzhen.aliyuncs.com/img/202412251748774.png)
