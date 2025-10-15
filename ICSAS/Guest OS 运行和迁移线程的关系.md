@@ -8,11 +8,7 @@ published: 2025-09-01
 draft: false
 ---
 
-这是一个非常好的问题！让我为您详细分析 QEMU 中 Guest OS 运行和迁移线程的关系：
-
-[10 tools called]
-
-基于代码分析，我为您详细解释 QEMU 中 Guest OS 运行和迁移线程的关系：
+ QEMU 中 Guest OS 运行和迁移线程的关系：
 
 ## 🔄 并行 + 协调模式
 

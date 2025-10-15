@@ -8,7 +8,7 @@ published: 2025-09-01
 draft: false
 ---
 
-我来为你详细梳理从热迁移触发到最终调用 `vm_change_state_handler` 的完整函数调用通路：
+热迁移触发到最终调用 `vm_change_state_handler` 的完整函数调用通路：
 
 ## 完整的热迁移调用通路详解
 

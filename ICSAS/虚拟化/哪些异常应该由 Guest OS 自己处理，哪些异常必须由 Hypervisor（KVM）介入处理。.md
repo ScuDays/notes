@@ -1,5 +1,5 @@
 ---
-title: 未命名 4
+title: 哪些异常应该由 Guest OS 自己处理，哪些异常必须由 Hypervisor（KVM）介入处理。
 date: 2025-09-10 22:11:26
 modify: 2025-09-10 22:11:26
 author: days
@@ -8,9 +8,8 @@ published: 2025-09-10
 draft: false
 ---
 
-您这个问题问得非常好，它正好引出了虚拟化中一个非常重要的区分：哪些异常应该由 Guest OS 自己处理，哪些异常必须由 Hypervisor（KVM）介入处理。
-
-答案是：并非所有 Guest OS 的异常都需要像之前描述的那样，由 KVM 来捕获和处理。
+- 哪些异常应该由 Guest OS 自己处理，哪些异常必须由 Hypervisor（KVM）介入处理。
+并非所有 Guest OS 的异常都需要像之前描述的那样，由 KVM 来捕获和处理。
 
 实际上，KVM 的设计哲学是最小化干预。绝大多数在 Guest OS 内部发生的常规异常，KVM 完全不会干涉，它们由 Guest OS 自己就消化了。只有那些会破坏虚拟化隔离性或需要 Hypervisor 提供特殊服务的异常，才会被 KVM 捕获。
 

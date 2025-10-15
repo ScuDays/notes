@@ -8,7 +8,7 @@ published: 2025-09-01
 draft: false
 ---
 
-完全正确！一旦调用了 `qemu_add_vm_change_state_handler(vm_change_state_handler, s)`，每次 VM 状态发生变化时，都会调用注册的 `vm_change_state_handler` 函数。
+一旦调用了 `qemu_add_vm_change_state_handler(vm_change_state_handler, s)`，每次 VM 状态发生变化时，都会调用注册的 `vm_change_state_handler` 函数。
 
 ## 详细的触发机制
 

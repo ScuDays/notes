@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ICSAS/RISC-V KVM热迁移优化 part3： 以小块逐步启用脏页日志/x86和arm64架构实现-逐渐以小块方式启用脏日志.md",
+                "file": "ICSAS/虚拟化/哪些异常应该由 Guest OS 自己处理，哪些异常必须由 Hypervisor（KVM）介入处理。.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "x86和arm64架构实现-逐渐以小块方式启用脏日志"
+              "title": "哪些异常应该由 Guest OS 自己处理，哪些异常必须由 Hypervisor（KVM）介入处理。"
             }
           }
         ]
@@ -96,7 +96,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 461.5
+    "width": 416.49999618530273
   },
   "right": {
     "id": "bfc5138eefd19587",
@@ -276,7 +276,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 360.5
+    "width": 585.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -295,38 +295,38 @@
       "obsidian-tag-suggest:为当前文档推荐标签": false
     }
   },
-  "active": "93915358dd6ed6f9",
+  "active": "1ce8d79448e5c5aa",
   "lastOpenFiles": [
-    "ICSAS/RISC-V KVM热迁移优化 part3： 以小块逐步启用脏页日志/从热迁移启动到位图内存分配的完整过程.md",
-    "ICSAS/RISC-V KVM热迁移优化 part3： 以小块逐步启用脏页日志/kvm_set_memslot-虚拟机内存修改函数.md",
+    "ICSAS/虚拟化/未命名 2.md",
+    "ICSAS/虚拟化/哪些异常应该由 Guest OS 自己处理，哪些异常必须由 Hypervisor（KVM）介入处理。.md",
+    "ICSAS/虚拟化/虚拟化中断处理.md",
+    "ICSAS/虚拟化/中断处理的全流程及状态转换.md",
+    "ICSAS/虚拟化/kvm 如何捕获问题处理.md",
+    "ICSAS/虚拟化/vm exit 与 特权级切换.md",
+    "ICSAS/ITS 表保存/ITS 表保存到客户机内存的时机.md",
+    "ICSAS/migration_thread/migration_thread核心迁移线程.md",
+    "ICSAS/migration_thread/migration_thread三个阶段.md",
+    "ICSAS/RAM迁移/ram_load_precopy处理 RAM 数据接收的核心函数.md",
     "ICSAS/RISC-V KVM热迁移优化 part3： 以小块逐步启用脏页日志/x86和arm64架构实现-逐渐以小块方式启用脏日志.md",
-    "ICSAS/RISC-V KVM热迁移优化 part3： 以小块逐步启用脏页日志",
-    "ICSAS/状态变化回调函数 qemu_add_vm_change_state_handler(vm_change_state_handler, s).md",
-    "ICSAS/migrate 完整调用链路图.md",
-    "ICSAS/QEMU 的双重状态保存机制.md",
-    "ICSAS/完整的热迁移调用通路到ITS保存.md",
+    "ICSAS/RISC-V KVM热迁移优化 part3： 以小块逐步启用脏页日志/kvm_set_memslot-虚拟机内存修改函数.md",
+    "ICSAS/RISC-V KVM热迁移优化 part3： 以小块逐步启用脏页日志/从热迁移启动到位图内存分配的完整过程.md",
     "ICSAS/`vmstate_save` 保存对应架构状态.md",
-    "ICSAS/虚拟化/中断处理.md",
-    "ICSAS/QEMU 热迁移架构相关代码.md",
+    "ICSAS/调用mark_page_dirty_in_slot的函数路径.md",
+    "ICSAS/完整的热迁移调用通路到ITS保存.md",
+    "ICSAS/预拷贝 + 停机拷贝.md",
+    "ICSAS/状态变化回调函数 qemu_add_vm_change_state_handler(vm_change_state_handler, s).md",
     "ICSAS/Guest OS 运行和迁移线程的关系.md",
+    "ICSAS/QEMU 热迁移架构相关代码.md",
+    "ICSAS/QEMU 的双重状态保存机制.md",
+    "ICSAS/migrate 完整调用链路图.md",
+    "ICSAS/RISC-V KVM热迁移优化 part3： 以小块逐步启用脏页日志",
     "6S081/Lecture/Lec11：Thread switching (Robert).md",
     "6S081/Lecture/Lec10：Multiprocessors and locking (Frans).md",
     "6S081/Lecture/Lec13：Sleep & Wake up (Robert).md",
     "6S081/Lecture/Lec14：File systems (Frans).md",
-    "computer basic/C 文件的编译过程.md",
     "4",
     "未命名.base",
     "photo/【正点原子】I.MX6U网络环境TFTP&amp;amp;NFS搭建手册V1.1_page-0054.jpg",
-    "Tools/Astro配置与解析.md",
-    "RTOS/需要整理.md",
-    "Embedded Linux/Uboot学习过程.md",
-    "Embedded Linux/Uboot.md",
-    "Embedded Linux/Shell脚本编程.md",
-    "Embedded Linux/Makefile.md",
-    "Embedded Linux/Linux系统简介.md",
-    "Embedded Linux/Linux文件目录.md",
-    "Embedded Linux/Linux通配符.md",
-    "Embedded Linux/Linux嵌入式环境配置（全面避坑）.md",
     "photo/【正点原子】I.MX6U嵌入式Linux驱动开发指南V1.81-164-169_page-0001.jpg",
     "photo/8dbba1deb9194076df6c568273e1f35e.png",
     " 4",

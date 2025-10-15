@@ -8,13 +8,7 @@ published: 2025-09-01
 draft: false
 ---
 
-非常好的问题！让我为您详细调查一下 QEMU 虚拟机的状态保存机制，看看是否所有硬件状态都通过 VMStateDescription 保存。
-
-[4 tools called]
-
-很好的观察！其实答案是：不是所有硬件状态都通过 VMStateDescription 保存。QEMU 实际上有两套状态保存机制！
-
-[1 tool called]
+不是所有硬件状态都通过 VMStateDescription 保存。QEMU 实际上有两套状态保存机制！
 
 ## 🎯 QEMU 的双重状态保存机制
 

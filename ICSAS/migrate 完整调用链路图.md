@@ -1,5 +1,5 @@
 ---
-title: 未命名
+title: migrate 完整调用链路图
 date: 2025-09-01 16:24:55
 modify: 2025-09-01 16:24:55
 author: days
@@ -8,11 +8,7 @@ published: 2025-09-01
 draft: false
 ---
 
-让我帮您追踪 `s->threshold_size = expected_bw_per_ms * migrate_downtime_limit();` 这行代码的调用链。
-
-[6 tools called]
-
-让我为您详细追踪 `s->threshold_size = expected_bw_per_ms * migrate_downtime_limit();` 这行代码的完整调用链。
+ `s->threshold_size = expected_bw_per_ms * migrate_downtime_limit();` 的完整调用链。
 
 ## 🔗 完整调用链追踪
 
