@@ -1,16 +1,20 @@
 {
   "recentFiles": [
     {
+      "basename": "SFENCE.VMA和fence的区别",
+      "path": "ICSAS/虚拟化/内存管理/SFENCE.VMA和fence的区别.md"
+    },
+    {
       "basename": "RISC-V--Svadu-Svade",
       "path": "ICSAS/虚拟化/内存管理/RISC-V--Svadu-Svade.md"
     },
     {
-      "basename": "DBM--arm64硬件脏页控制",
-      "path": "ICSAS/虚拟化/内存管理/DBM--arm64硬件脏页控制.md"
+      "basename": "kvm 如何捕获问题处理",
+      "path": "ICSAS/虚拟化/kvm 如何捕获问题处理.md"
     },
     {
-      "basename": "哪些异常应该由 Guest OS 自己处理，哪些异常必须由 Hypervisor（KVM）介入处理。",
-      "path": "ICSAS/虚拟化/哪些异常应该由 Guest OS 自己处理，哪些异常必须由 Hypervisor（KVM）介入处理。.md"
+      "basename": "中断处理的全流程及状态转换",
+      "path": "ICSAS/虚拟化/中断处理的全流程及状态转换.md"
     },
     {
       "basename": "虚拟化中断处理",
@@ -21,12 +25,16 @@
       "path": "ICSAS/虚拟化/影子页表.md"
     },
     {
-      "basename": "中断处理的全流程及状态转换",
-      "path": "ICSAS/虚拟化/中断处理的全流程及状态转换.md"
+      "basename": "内存虚拟化",
+      "path": "ICSAS/虚拟化/内存管理/内存虚拟化.md"
     },
     {
-      "basename": "kvm 如何捕获问题处理",
-      "path": "ICSAS/虚拟化/kvm 如何捕获问题处理.md"
+      "basename": "DBM--arm64硬件脏页控制",
+      "path": "ICSAS/虚拟化/内存管理/DBM--arm64硬件脏页控制.md"
+    },
+    {
+      "basename": "哪些异常应该由 Guest OS 自己处理，哪些异常必须由 Hypervisor（KVM）介入处理。",
+      "path": "ICSAS/虚拟化/哪些异常应该由 Guest OS 自己处理，哪些异常必须由 Hypervisor（KVM）介入处理。.md"
     },
     {
       "basename": "vm exit 与 特权级切换",
@@ -39,10 +47,6 @@
     {
       "basename": "ITS表保存操作触发时机",
       "path": "ICSAS/ITS 表保存/ITS表保存操作触发时机.md"
-    },
-    {
-      "basename": "内存虚拟化",
-      "path": "ICSAS/虚拟化/内存管理/内存虚拟化.md"
     },
     {
       "basename": "x86和arm64架构实现-逐渐以小块方式启用脏日志",
@@ -195,10 +199,6 @@
     {
       "basename": "平台设备驱动框架",
       "path": "Embedded Linux/平台设备驱动框架.md"
-    },
-    {
-      "basename": "交叉编译",
-      "path": "Embedded Linux/交叉编译.md"
     }
   ],
   "omittedPaths": [],
