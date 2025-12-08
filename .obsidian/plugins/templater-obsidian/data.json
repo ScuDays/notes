@@ -51,8 +51,8 @@
       "template": "_模板/ICSAS.md"
     },
     {
-      "folder": "",
-      "template": ""
+      "folder": "RISCV",
+      "template": "_模板/RISCV.md"
     }
   ],
   "enable_file_templates": false,

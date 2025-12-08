@@ -1,12 +1,36 @@
 {
   "recentFiles": [
     {
+      "basename": "Astro配置与解析",
+      "path": "Tools/Astro配置与解析.md"
+    },
+    {
+      "basename": "内存虚拟化",
+      "path": "ICSAS/虚拟化/内存管理/内存虚拟化.md"
+    },
+    {
+      "basename": "DBM--arm64硬件脏页控制",
+      "path": "ICSAS/虚拟化/内存管理/DBM--arm64硬件脏页控制.md"
+    },
+    {
       "basename": "SFENCE.VMA和fence的区别",
-      "path": "ICSAS/虚拟化/内存管理/SFENCE.VMA和fence的区别.md"
+      "path": "RISCV/SFENCE.VMA和fence的区别.md"
     },
     {
       "basename": "RISC-V--Svadu-Svade",
-      "path": "ICSAS/虚拟化/内存管理/RISC-V--Svadu-Svade.md"
+      "path": "RISCV/RISC-V--Svadu-Svade.md"
+    },
+    {
+      "basename": "SFENCE",
+      "path": "RISCV/SFENCE.md"
+    },
+    {
+      "basename": "RISCV",
+      "path": "_模板/RISCV.md"
+    },
+    {
+      "basename": "常用命令",
+      "path": "_模板/常用命令.md"
     },
     {
       "basename": "kvm 如何捕获问题处理",
@@ -23,14 +47,6 @@
     {
       "basename": "影子页表",
       "path": "ICSAS/虚拟化/影子页表.md"
-    },
-    {
-      "basename": "内存虚拟化",
-      "path": "ICSAS/虚拟化/内存管理/内存虚拟化.md"
-    },
-    {
-      "basename": "DBM--arm64硬件脏页控制",
-      "path": "ICSAS/虚拟化/内存管理/DBM--arm64硬件脏页控制.md"
     },
     {
       "basename": "哪些异常应该由 Guest OS 自己处理，哪些异常必须由 Hypervisor（KVM）介入处理。",
@@ -59,10 +75,6 @@
     {
       "basename": "从热迁移启动到位图内存分配的完整过程",
       "path": "ICSAS/RISC-V KVM热迁移优化 part3： 以小块逐步启用脏页日志/从热迁移启动到位图内存分配的完整过程.md"
-    },
-    {
-      "basename": "未命名",
-      "path": "未命名.base"
     },
     {
       "basename": "ram_load_precopy处理 RAM 数据接收的核心函数",
@@ -137,10 +149,6 @@
       "path": "photo/【正点原子】I.MX6U网络环境TFTP&amp;amp;NFS搭建手册V1.1_page-0054.jpg"
     },
     {
-      "basename": "Astro配置与解析",
-      "path": "Tools/Astro配置与解析.md"
-    },
-    {
       "basename": "需要整理",
       "path": "RTOS/需要整理.md"
     },
@@ -183,22 +191,6 @@
     {
       "basename": "Linux的设备模型",
       "path": "Embedded Linux/Linux的设备模型.md"
-    },
-    {
-      "basename": "正点原子IMX6ull网络挂载内核镜像、设备树、根文件系统",
-      "path": "Embedded Linux/正点原子IMX6ull网络挂载内核镜像、设备树、根文件系统.md"
-    },
-    {
-      "basename": "学习过程",
-      "path": "Embedded Linux/学习过程.md"
-    },
-    {
-      "basename": "需要整理",
-      "path": "Embedded Linux/需要整理.md"
-    },
-    {
-      "basename": "平台设备驱动框架",
-      "path": "Embedded Linux/平台设备驱动框架.md"
     }
   ],
   "omittedPaths": [],
