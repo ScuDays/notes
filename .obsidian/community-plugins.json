@@ -1,5 +1,4 @@
 [
-  "obsidian-git",
   "typing-assistant",
   "obsidian-style-settings",
   "mysnippets-plugin",
@@ -19,5 +18,6 @@
   "obsidian-quiet-outline",
   "obsidian-tag-suggest",
   "floating-toc",
-  "obsidian-image-auto-upload-plugin"
+  "obsidian-image-auto-upload-plugin",
+  "obsidian-git"
 ]

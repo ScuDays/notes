@@ -1,6 +1,22 @@
 {
   "recentFiles": [
     {
+      "basename": "SFENCE.VMA",
+      "path": "RISCV/SFENCE.VMA.md"
+    },
+    {
+      "basename": "SFENCE.VMA和fence的区别",
+      "path": "RISCV/SFENCE.VMA和fence的区别.md"
+    },
+    {
+      "basename": "RISCV-Svvptc 扩展",
+      "path": "RISCV/RISCV-Svvptc 扩展.md"
+    },
+    {
+      "basename": "RISC-V--Svadu-Svade",
+      "path": "RISCV/RISC-V--Svadu-Svade.md"
+    },
+    {
       "basename": "Astro配置与解析",
       "path": "Tools/Astro配置与解析.md"
     },
@@ -11,18 +27,6 @@
     {
       "basename": "DBM--arm64硬件脏页控制",
       "path": "ICSAS/虚拟化/内存管理/DBM--arm64硬件脏页控制.md"
-    },
-    {
-      "basename": "SFENCE.VMA和fence的区别",
-      "path": "RISCV/SFENCE.VMA和fence的区别.md"
-    },
-    {
-      "basename": "RISC-V--Svadu-Svade",
-      "path": "RISCV/RISC-V--Svadu-Svade.md"
-    },
-    {
-      "basename": "SFENCE",
-      "path": "RISCV/SFENCE.md"
     },
     {
       "basename": "RISCV",
